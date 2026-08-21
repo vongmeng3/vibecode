@@ -1,0 +1,547 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.9.0
+2 info using node@v24.14.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\.npmrc
+5 silly config load:file:C:\Users\ASUS\.npmrc
+6 silly config load:file:C:\Users\ASUS\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install
+8 verbose argv "install" "--cache" ".npm-cache" "--no-audit" "--no-fund"
+9 verbose logfile logs-max:10 dir:E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\.npm-cache\_logs\2026-08-21T02_26_51_983Z-
+10 verbose logfile E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\.npm-cache\_logs\2026-08-21T02_26_51_983Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 silly idealTree buildDeps
+14 silly reify mark retired [
+14 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\caniuse-lite'
+14 silly reify ]
+15 silly reify mark retired [
+15 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\client-only'
+15 silly reify ]
+16 silly reify mark retired [
+16 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\next'
+16 silly reify ]
+17 silly reify mark retired [
+17 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\nanoid'
+17 silly reify ]
+18 silly reify mark retired [
+18 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\postcss'
+18 silly reify ]
+19 silly reify mark retired [
+19 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\scheduler'
+19 silly reify ]
+20 silly reify mark retired [
+20 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\semver'
+20 silly reify ]
+21 silly reify mark retired [
+21 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\react'
+21 silly reify ]
+22 silly reify mark retired [
+22 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\sharp'
+22 silly reify ]
+23 silly reify mark retired [
+23 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\source-map-js'
+23 silly reify ]
+24 silly reify mark retired [
+24 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\styled-jsx'
+24 silly reify ]
+25 silly reify mark retired [
+25 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\tslib'
+25 silly reify ]
+26 silly reify mark retired [
+26 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\react-dom'
+26 silly reify ]
+27 silly reify mark retired [
+27 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\colour'
+27 silly reify ]
+28 silly reify mark retired [
+28 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-win32-x64'
+28 silly reify ]
+29 silly reify mark retired [
+29 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@next\\env'
+29 silly reify ]
+30 silly reify mark retired [
+30 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@next\\swc-win32-x64-msvc'
+30 silly reify ]
+31 silly reify mark retired [
+31 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@swc\\helpers'
+31 silly reify ]
+32 silly reify moves {
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\caniuse-lite': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.caniuse-lite-M8EIqtVx',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\client-only': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.client-only-fEfvIZ1W',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\next': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.next-4z0XQrz0',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\nanoid': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.nanoid-mgXpZSEV',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\postcss': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.postcss-uY9PC1ul',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\scheduler': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.scheduler-YkEFnNwV',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\semver': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.semver-wfEab9zC',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\react': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.react-BhSzWM3z',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\sharp': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.sharp-lcRKDVFc',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\source-map-js': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.source-map-js-pHvUTZ5u',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\styled-jsx': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.styled-jsx-RIh6xCTE',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\tslib': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.tslib-fodrn1eg',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\react-dom': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.react-dom-4NUWUovk',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\colour': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\.colour-VjzUFgrg',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-win32-x64': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\.sharp-win32-x64-6eT0AdKK',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@next\\env': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@next\\.env-T8QWjIQm',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@next\\swc-win32-x64-msvc': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@next\\.swc-win32-x64-msvc-v5ah0tbr',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@swc\\helpers': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@swc\\.helpers-D25Iumns'
+32 silly reify }
+33 http fetch GET https://registry.npmjs.org/npm attempt 1 failed with EACCES
+34 http cache @swc/helpers@https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz 0ms (cache hit)
+35 http cache @next/env@https://registry.npmjs.org/@next/env/-/env-15.5.23.tgz 0ms (cache hit)
+36 http cache @img/sharp-win32-x64@https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.34.5.tgz 0ms (cache hit)
+37 http cache @next/swc-win32-x64-msvc@https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-15.5.23.tgz 0ms (cache hit)
+38 http cache react-dom@https://registry.npmjs.org/react-dom/-/react-dom-19.2.8.tgz 0ms (cache hit)
+39 http cache @img/colour@https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz 0ms (cache hit)
+40 http cache tslib@https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz 0ms (cache hit)
+41 http cache styled-jsx@https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz 0ms (cache hit)
+42 http cache react@https://registry.npmjs.org/react/-/react-19.2.8.tgz 0ms (cache hit)
+43 http cache source-map-js@https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz 0ms (cache hit)
+44 http cache sharp@https://registry.npmjs.org/sharp/-/sharp-0.34.5.tgz 0ms (cache hit)
+45 http cache semver@https://registry.npmjs.org/semver/-/semver-7.8.5.tgz 0ms (cache hit)
+46 http cache scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz 0ms (cache hit)
+47 http cache nanoid@https://registry.npmjs.org/nanoid/-/nanoid-3.3.18.tgz 0ms (cache hit)
+48 http cache postcss@https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz 0ms (cache hit)
+49 silly tarball no local data for @swc/helpers@https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz. Extracting by manifest.
+50 silly tarball no local data for @next/env@https://registry.npmjs.org/@next/env/-/env-15.5.23.tgz. Extracting by manifest.
+51 silly tarball no local data for @img/sharp-win32-x64@https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.34.5.tgz. Extracting by manifest.
+52 silly tarball no local data for @next/swc-win32-x64-msvc@https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-15.5.23.tgz. Extracting by manifest.
+53 silly tarball no local data for react-dom@https://registry.npmjs.org/react-dom/-/react-dom-19.2.8.tgz. Extracting by manifest.
+54 silly tarball no local data for @img/colour@https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz. Extracting by manifest.
+55 silly tarball no local data for tslib@https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz. Extracting by manifest.
+56 http cache client-only@https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz 0ms (cache hit)
+57 silly tarball no local data for styled-jsx@https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz. Extracting by manifest.
+58 silly tarball no local data for react@https://registry.npmjs.org/react/-/react-19.2.8.tgz. Extracting by manifest.
+59 silly tarball no local data for source-map-js@https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz. Extracting by manifest.
+60 silly tarball no local data for sharp@https://registry.npmjs.org/sharp/-/sharp-0.34.5.tgz. Extracting by manifest.
+61 silly tarball no local data for semver@https://registry.npmjs.org/semver/-/semver-7.8.5.tgz. Extracting by manifest.
+62 silly tarball no local data for scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz. Extracting by manifest.
+63 silly tarball no local data for nanoid@https://registry.npmjs.org/nanoid/-/nanoid-3.3.18.tgz. Extracting by manifest.
+64 silly tarball no local data for postcss@https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz. Extracting by manifest.
+65 http cache caniuse-lite@https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001809.tgz 0ms (cache hit)
+66 http cache next@https://registry.npmjs.org/next/-/next-15.5.23.tgz 0ms (cache hit)
+67 silly tarball no local data for client-only@https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz. Extracting by manifest.
+68 silly tarball no local data for caniuse-lite@https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001809.tgz. Extracting by manifest.
+69 silly tarball no local data for next@https://registry.npmjs.org/next/-/next-15.5.23.tgz. Extracting by manifest.
+70 http fetch GET https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz attempt 1 failed with EACCES
+71 http fetch GET https://registry.npmjs.org/@next/env/-/env-15.5.23.tgz attempt 1 failed with EACCES
+72 http fetch GET https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.34.5.tgz attempt 1 failed with EACCES
+73 http fetch GET https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-15.5.23.tgz attempt 1 failed with EACCES
+74 http fetch GET https://registry.npmjs.org/react-dom/-/react-dom-19.2.8.tgz attempt 1 failed with EACCES
+75 http fetch GET https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz attempt 1 failed with EACCES
+76 http fetch GET https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz attempt 1 failed with EACCES
+77 http fetch GET https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz attempt 1 failed with EACCES
+78 http fetch GET https://registry.npmjs.org/react/-/react-19.2.8.tgz attempt 1 failed with EACCES
+79 http fetch GET https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz attempt 1 failed with EACCES
+80 http fetch GET https://registry.npmjs.org/sharp/-/sharp-0.34.5.tgz attempt 1 failed with EACCES
+81 http fetch GET https://registry.npmjs.org/semver/-/semver-7.8.5.tgz attempt 1 failed with EACCES
+82 http fetch GET https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz attempt 1 failed with EACCES
+83 http fetch GET https://registry.npmjs.org/nanoid/-/nanoid-3.3.18.tgz attempt 1 failed with EACCES
+84 http fetch GET https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz attempt 1 failed with EACCES
+85 http fetch GET https://registry.npmjs.org/npm attempt 2 failed with EACCES
+86 http fetch GET https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz attempt 2 failed with EACCES
+87 http fetch GET https://registry.npmjs.org/@next/env/-/env-15.5.23.tgz attempt 2 failed with EACCES
+88 http fetch GET https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.34.5.tgz attempt 2 failed with EACCES
+89 http fetch GET https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-15.5.23.tgz attempt 2 failed with EACCES
+90 http fetch GET https://registry.npmjs.org/react-dom/-/react-dom-19.2.8.tgz attempt 2 failed with EACCES
+91 http fetch GET https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz attempt 2 failed with EACCES
+92 http fetch GET https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz attempt 2 failed with EACCES
+93 http fetch GET https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz attempt 2 failed with EACCES
+94 http fetch GET https://registry.npmjs.org/react/-/react-19.2.8.tgz attempt 2 failed with EACCES
+95 http fetch GET https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz attempt 2 failed with EACCES
+96 http fetch GET https://registry.npmjs.org/sharp/-/sharp-0.34.5.tgz attempt 2 failed with EACCES
+97 http fetch GET https://registry.npmjs.org/semver/-/semver-7.8.5.tgz attempt 2 failed with EACCES
+98 http fetch GET https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz attempt 2 failed with EACCES
+99 http fetch GET https://registry.npmjs.org/nanoid/-/nanoid-3.3.18.tgz attempt 2 failed with EACCES
+100 http fetch GET https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz attempt 2 failed with EACCES
+101 http fetch GET https://registry.npmjs.org/npm attempt 3 failed with EACCES
+102 http fetch GET https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz attempt 3 failed with EACCES
+103 http fetch GET https://registry.npmjs.org/@next/env/-/env-15.5.23.tgz attempt 3 failed with EACCES
+104 http fetch GET https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.34.5.tgz attempt 3 failed with EACCES
+105 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-win32-x64
+106 silly reify mark deleted [
+106 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-win32-x64'
+106 silly reify ]
+107 http fetch GET https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-15.5.23.tgz attempt 3 failed with EACCES
+108 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@next\swc-win32-x64-msvc
+109 silly reify mark deleted [
+109 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@next\\swc-win32-x64-msvc'
+109 silly reify ]
+110 http fetch GET https://registry.npmjs.org/react-dom/-/react-dom-19.2.8.tgz attempt 3 failed with EACCES
+111 http fetch GET https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz attempt 3 failed with EACCES
+112 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\colour
+113 silly reify mark deleted [
+113 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\colour'
+113 silly reify ]
+114 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\sharp
+115 silly reify mark deleted [
+115 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\sharp'
+115 silly reify ]
+116 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\detect-libc
+117 silly reify mark deleted [
+117 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\detect-libc'
+117 silly reify ]
+118 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\semver
+119 silly reify mark deleted [
+119 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\semver',
+119 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.bin\\semver',
+119 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.bin\\semver.cmd',
+119 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.bin\\semver.ps1'
+119 silly reify ]
+120 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-darwin-arm64
+121 silly reify mark deleted [
+121 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-darwin-arm64'
+121 silly reify ]
+122 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-darwin-x64
+123 silly reify mark deleted [
+123 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-darwin-x64'
+123 silly reify ]
+124 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-darwin-arm64
+125 silly reify mark deleted [
+125 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-darwin-arm64'
+125 silly reify ]
+126 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-darwin-x64
+127 silly reify mark deleted [
+127 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-darwin-x64'
+127 silly reify ]
+128 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-arm
+129 silly reify mark deleted [
+129 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-arm'
+129 silly reify ]
+130 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-arm64
+131 silly reify mark deleted [
+131 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-arm64'
+131 silly reify ]
+132 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-ppc64
+133 silly reify mark deleted [
+133 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-ppc64'
+133 silly reify ]
+134 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-riscv64
+135 silly reify mark deleted [
+135 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-riscv64'
+135 silly reify ]
+136 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-s390x
+137 silly reify mark deleted [
+137 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-s390x'
+137 silly reify ]
+138 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-x64
+139 silly reify mark deleted [
+139 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-x64'
+139 silly reify ]
+140 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linuxmusl-arm64
+141 silly reify mark deleted [
+141 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linuxmusl-arm64'
+141 silly reify ]
+142 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linuxmusl-x64
+143 silly reify mark deleted [
+143 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linuxmusl-x64'
+143 silly reify ]
+144 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-arm
+145 silly reify mark deleted [
+145 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-arm'
+145 silly reify ]
+146 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-arm64
+147 silly reify mark deleted [
+147 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-arm64'
+147 silly reify ]
+148 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-ppc64
+149 silly reify mark deleted [
+149 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-ppc64'
+149 silly reify ]
+150 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-riscv64
+151 silly reify mark deleted [
+151 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-riscv64'
+151 silly reify ]
+152 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-s390x
+153 silly reify mark deleted [
+153 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-s390x'
+153 silly reify ]
+154 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-x64
+155 silly reify mark deleted [
+155 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-x64'
+155 silly reify ]
+156 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linuxmusl-arm64
+157 silly reify mark deleted [
+157 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linuxmusl-arm64'
+157 silly reify ]
+158 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linuxmusl-x64
+159 silly reify mark deleted [
+159 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linuxmusl-x64'
+159 silly reify ]
+160 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-wasm32
+161 silly reify mark deleted [
+161 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-wasm32'
+161 silly reify ]
+162 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-win32-arm64
+163 silly reify mark deleted [
+163 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-win32-arm64'
+163 silly reify ]
+164 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-win32-ia32
+165 silly reify mark deleted [
+165 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-win32-ia32'
+165 silly reify ]
+166 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-win32-x64
+167 silly reify mark deleted [
+167 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-win32-x64'
+167 silly reify ]
+168 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@emnapi\runtime
+169 silly reify mark deleted [
+169 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@emnapi\\runtime'
+169 silly reify ]
+170 http fetch GET https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz attempt 3 failed with EACCES
+171 http fetch GET https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz attempt 3 failed with EACCES
+172 http fetch GET https://registry.npmjs.org/react/-/react-19.2.8.tgz attempt 3 failed with EACCES
+173 http fetch GET https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz attempt 3 failed with EACCES
+174 http fetch GET https://registry.npmjs.org/sharp/-/sharp-0.34.5.tgz attempt 3 failed with EACCES
+175 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\sharp
+176 silly reify mark deleted [
+176 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\sharp'
+176 silly reify ]
+177 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\colour
+178 silly reify mark deleted [
+178 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\colour'
+178 silly reify ]
+179 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\detect-libc
+180 silly reify mark deleted [
+180 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\detect-libc'
+180 silly reify ]
+181 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\semver
+182 silly reify mark deleted [
+182 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\semver',
+182 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.bin\\semver',
+182 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.bin\\semver.cmd',
+182 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.bin\\semver.ps1'
+182 silly reify ]
+183 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-darwin-arm64
+184 silly reify mark deleted [
+184 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-darwin-arm64'
+184 silly reify ]
+185 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-darwin-x64
+186 silly reify mark deleted [
+186 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-darwin-x64'
+186 silly reify ]
+187 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-darwin-arm64
+188 silly reify mark deleted [
+188 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-darwin-arm64'
+188 silly reify ]
+189 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-darwin-x64
+190 silly reify mark deleted [
+190 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-darwin-x64'
+190 silly reify ]
+191 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-arm
+192 silly reify mark deleted [
+192 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-arm'
+192 silly reify ]
+193 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-arm64
+194 silly reify mark deleted [
+194 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-arm64'
+194 silly reify ]
+195 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-ppc64
+196 silly reify mark deleted [
+196 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-ppc64'
+196 silly reify ]
+197 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-riscv64
+198 silly reify mark deleted [
+198 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-riscv64'
+198 silly reify ]
+199 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-s390x
+200 silly reify mark deleted [
+200 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-s390x'
+200 silly reify ]
+201 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-x64
+202 silly reify mark deleted [
+202 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-x64'
+202 silly reify ]
+203 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linuxmusl-arm64
+204 silly reify mark deleted [
+204 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linuxmusl-arm64'
+204 silly reify ]
+205 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linuxmusl-x64
+206 silly reify mark deleted [
+206 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linuxmusl-x64'
+206 silly reify ]
+207 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-arm
+208 silly reify mark deleted [
+208 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-arm'
+208 silly reify ]
+209 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-arm64
+210 silly reify mark deleted [
+210 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-arm64'
+210 silly reify ]
+211 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-ppc64
+212 silly reify mark deleted [
+212 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-ppc64'
+212 silly reify ]
+213 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-riscv64
+214 silly reify mark deleted [
+214 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-riscv64'
+214 silly reify ]
+215 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-s390x
+216 silly reify mark deleted [
+216 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-s390x'
+216 silly reify ]
+217 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-x64
+218 silly reify mark deleted [
+218 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-x64'
+218 silly reify ]
+219 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linuxmusl-arm64
+220 silly reify mark deleted [
+220 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linuxmusl-arm64'
+220 silly reify ]
+221 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linuxmusl-x64
+222 silly reify mark deleted [
+222 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linuxmusl-x64'
+222 silly reify ]
+223 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-wasm32
+224 silly reify mark deleted [
+224 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-wasm32'
+224 silly reify ]
+225 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-win32-arm64
+226 silly reify mark deleted [
+226 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-win32-arm64'
+226 silly reify ]
+227 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-win32-ia32
+228 silly reify mark deleted [
+228 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-win32-ia32'
+228 silly reify ]
+229 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-win32-x64
+230 silly reify mark deleted [
+230 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-win32-x64'
+230 silly reify ]
+231 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@emnapi\runtime
+232 silly reify mark deleted [
+232 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@emnapi\\runtime'
+232 silly reify ]
+233 http fetch GET https://registry.npmjs.org/semver/-/semver-7.8.5.tgz attempt 3 failed with EACCES
+234 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\semver
+235 silly reify mark deleted [
+235 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\semver',
+235 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.bin\\semver',
+235 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.bin\\semver.cmd',
+235 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.bin\\semver.ps1'
+235 silly reify ]
+236 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\sharp
+237 silly reify mark deleted [
+237 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\sharp'
+237 silly reify ]
+238 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\colour
+239 silly reify mark deleted [
+239 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\colour'
+239 silly reify ]
+240 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\detect-libc
+241 silly reify mark deleted [
+241 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\detect-libc'
+241 silly reify ]
+242 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-darwin-arm64
+243 silly reify mark deleted [
+243 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-darwin-arm64'
+243 silly reify ]
+244 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-darwin-x64
+245 silly reify mark deleted [
+245 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-darwin-x64'
+245 silly reify ]
+246 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-darwin-arm64
+247 silly reify mark deleted [
+247 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-darwin-arm64'
+247 silly reify ]
+248 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-darwin-x64
+249 silly reify mark deleted [
+249 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-darwin-x64'
+249 silly reify ]
+250 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-arm
+251 silly reify mark deleted [
+251 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-arm'
+251 silly reify ]
+252 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-arm64
+253 silly reify mark deleted [
+253 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-arm64'
+253 silly reify ]
+254 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-ppc64
+255 silly reify mark deleted [
+255 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-ppc64'
+255 silly reify ]
+256 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-riscv64
+257 silly reify mark deleted [
+257 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-riscv64'
+257 silly reify ]
+258 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-s390x
+259 silly reify mark deleted [
+259 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-s390x'
+259 silly reify ]
+260 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linux-x64
+261 silly reify mark deleted [
+261 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linux-x64'
+261 silly reify ]
+262 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linuxmusl-arm64
+263 silly reify mark deleted [
+263 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linuxmusl-arm64'
+263 silly reify ]
+264 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-libvips-linuxmusl-x64
+265 silly reify mark deleted [
+265 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-libvips-linuxmusl-x64'
+265 silly reify ]
+266 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-arm
+267 silly reify mark deleted [
+267 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-arm'
+267 silly reify ]
+268 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-arm64
+269 silly reify mark deleted [
+269 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-arm64'
+269 silly reify ]
+270 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-ppc64
+271 silly reify mark deleted [
+271 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-ppc64'
+271 silly reify ]
+272 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-riscv64
+273 silly reify mark deleted [
+273 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-riscv64'
+273 silly reify ]
+274 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-s390x
+275 silly reify mark deleted [
+275 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-s390x'
+275 silly reify ]
+276 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linux-x64
+277 silly reify mark deleted [
+277 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linux-x64'
+277 silly reify ]
+278 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linuxmusl-arm64
+279 silly reify mark deleted [
+279 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linuxmusl-arm64'
+279 silly reify ]
+280 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-linuxmusl-x64
+281 silly reify mark deleted [
+281 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-linuxmusl-x64'
+281 silly reify ]
+282 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-wasm32
+283 silly reify mark deleted [
+283 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-wasm32'
+283 silly reify ]
+284 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-win32-arm64
+285 silly reify mark deleted [
+285 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-win32-arm64'
+285 silly reify ]
+286 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-win32-ia32
+287 silly reify mark deleted [
+287 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-win32-ia32'
+287 silly reify ]
+288 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@img\sharp-win32-x64
+289 silly reify mark deleted [
+289 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-win32-x64'
+289 silly reify ]
+290 verbose reify failed optional dependency E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\node_modules\@emnapi\runtime
+291 silly reify mark deleted [
+291 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@emnapi\\runtime'
+291 silly reify ]
+292 http fetch GET https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz attempt 3 failed with EACCES
+293 http fetch GET https://registry.npmjs.org/nanoid/-/nanoid-3.3.18.tgz attempt 3 failed with EACCES
+294 http fetch GET https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz attempt 3 failed with EACCES
+295 verbose cwd E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode
+296 verbose os Windows_NT 10.0.26200
+297 verbose node v24.14.0
+298 verbose npm  v11.9.0
+299 error Exit handler never called!
+300 error This is an error with npm itself. Please report this error at:
+301 error   <https://github.com/npm/cli/issues>
+302 verbose exit 1
+303 verbose code 1
+304 error A complete log of this run can be found in: E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\.npm-cache\_logs\2026-08-21T02_26_51_983Z-debug-0.log

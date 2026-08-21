@@ -1,0 +1,168 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.9.0
+2 info using node@v24.14.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\.npmrc
+5 silly config load:file:C:\Users\ASUS\.npmrc
+6 silly config load:file:C:\Users\ASUS\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install
+8 verbose argv "install" "--cache" ".npm-cache" "--no-audit" "--no-fund"
+9 verbose logfile logs-max:10 dir:E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\.npm-cache\_logs\2026-08-21T02_29_01_537Z-
+10 verbose logfile E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode\.npm-cache\_logs\2026-08-21T02_29_01_537Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 silly idealTree buildDeps
+14 silly reify mark retired [
+14 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\client-only'
+14 silly reify ]
+15 silly reify mark retired [
+15 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\caniuse-lite'
+15 silly reify ]
+16 silly reify mark retired [
+16 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\nanoid'
+16 silly reify ]
+17 silly reify mark retired [
+17 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\postcss'
+17 silly reify ]
+18 silly reify mark retired [
+18 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\react-dom'
+18 silly reify ]
+19 silly reify mark retired [
+19 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\scheduler'
+19 silly reify ]
+20 silly reify mark retired [
+20 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\semver'
+20 silly reify ]
+21 silly reify mark retired [
+21 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\react'
+21 silly reify ]
+22 silly reify mark retired [
+22 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\sharp'
+22 silly reify ]
+23 silly reify mark retired [
+23 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\next'
+23 silly reify ]
+24 silly reify mark retired [
+24 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\source-map-js'
+24 silly reify ]
+25 silly reify mark retired [
+25 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\tslib'
+25 silly reify ]
+26 silly reify mark retired [
+26 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\styled-jsx'
+26 silly reify ]
+27 silly reify mark retired [
+27 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-win32-x64'
+27 silly reify ]
+28 silly reify mark retired [
+28 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\colour'
+28 silly reify ]
+29 silly reify mark retired [
+29 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@next\\env'
+29 silly reify ]
+30 silly reify mark retired [
+30 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@next\\swc-win32-x64-msvc'
+30 silly reify ]
+31 silly reify mark retired [
+31 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@swc\\helpers'
+31 silly reify ]
+32 silly reify moves {
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\client-only': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.client-only-fEfvIZ1W',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\caniuse-lite': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.caniuse-lite-M8EIqtVx',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\nanoid': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.nanoid-mgXpZSEV',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\postcss': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.postcss-uY9PC1ul',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\react-dom': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.react-dom-4NUWUovk',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\scheduler': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.scheduler-YkEFnNwV',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\semver': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.semver-wfEab9zC',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\react': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.react-BhSzWM3z',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\sharp': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.sharp-lcRKDVFc',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\next': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.next-4z0XQrz0',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\source-map-js': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.source-map-js-pHvUTZ5u',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\tslib': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.tslib-fodrn1eg',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\styled-jsx': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\.styled-jsx-RIh6xCTE',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\sharp-win32-x64': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\.sharp-win32-x64-6eT0AdKK',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\colour': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@img\\.colour-VjzUFgrg',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@next\\env': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@next\\.env-T8QWjIQm',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@next\\swc-win32-x64-msvc': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@next\\.swc-win32-x64-msvc-v5ah0tbr',
+32 silly reify   'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@swc\\helpers': 'E:\\1. AUPP\\Junior\\Semester II\\Vibe Coding\\Lab 1 - Deploy Day\\vibecode\\node_modules\\@swc\\.helpers-D25Iumns'
+32 silly reify }
+33 http cache @swc/helpers@https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz 0ms (cache hit)
+34 http cache @img/sharp-win32-x64@https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.34.5.tgz 0ms (cache hit)
+35 http cache @next/swc-win32-x64-msvc@https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-15.5.23.tgz 0ms (cache hit)
+36 http cache @next/env@https://registry.npmjs.org/@next/env/-/env-15.5.23.tgz 0ms (cache hit)
+37 http cache @img/colour@https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz 0ms (cache hit)
+38 http cache styled-jsx@https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz 0ms (cache hit)
+39 http cache tslib@https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz 0ms (cache hit)
+40 http cache source-map-js@https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz 0ms (cache hit)
+41 http cache next@https://registry.npmjs.org/next/-/next-15.5.23.tgz 0ms (cache hit)
+42 http cache sharp@https://registry.npmjs.org/sharp/-/sharp-0.34.5.tgz 0ms (cache hit)
+43 http cache react@https://registry.npmjs.org/react/-/react-19.2.8.tgz 0ms (cache hit)
+44 http cache semver@https://registry.npmjs.org/semver/-/semver-7.8.5.tgz 0ms (cache hit)
+45 http cache scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz 0ms (cache hit)
+46 http cache react-dom@https://registry.npmjs.org/react-dom/-/react-dom-19.2.8.tgz 0ms (cache hit)
+47 http cache postcss@https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz 0ms (cache hit)
+48 http cache client-only@https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz 0ms (cache hit)
+49 silly tarball no local data for @swc/helpers@https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz. Extracting by manifest.
+50 silly tarball no local data for @img/sharp-win32-x64@https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.34.5.tgz. Extracting by manifest.
+51 silly tarball no local data for @next/swc-win32-x64-msvc@https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-15.5.23.tgz. Extracting by manifest.
+52 silly tarball no local data for @next/env@https://registry.npmjs.org/@next/env/-/env-15.5.23.tgz. Extracting by manifest.
+53 silly tarball no local data for @img/colour@https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz. Extracting by manifest.
+54 silly tarball no local data for styled-jsx@https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz. Extracting by manifest.
+55 silly tarball no local data for tslib@https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz. Extracting by manifest.
+56 silly tarball no local data for source-map-js@https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz. Extracting by manifest.
+57 silly tarball no local data for next@https://registry.npmjs.org/next/-/next-15.5.23.tgz. Extracting by manifest.
+58 silly tarball no local data for sharp@https://registry.npmjs.org/sharp/-/sharp-0.34.5.tgz. Extracting by manifest.
+59 silly tarball no local data for react@https://registry.npmjs.org/react/-/react-19.2.8.tgz. Extracting by manifest.
+60 silly tarball no local data for semver@https://registry.npmjs.org/semver/-/semver-7.8.5.tgz. Extracting by manifest.
+61 silly tarball no local data for scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz. Extracting by manifest.
+62 silly tarball no local data for react-dom@https://registry.npmjs.org/react-dom/-/react-dom-19.2.8.tgz. Extracting by manifest.
+63 silly tarball no local data for postcss@https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz. Extracting by manifest.
+64 http cache nanoid@https://registry.npmjs.org/nanoid/-/nanoid-3.3.18.tgz 0ms (cache hit)
+65 silly tarball no local data for client-only@https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz. Extracting by manifest.
+66 http cache caniuse-lite@https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001809.tgz 0ms (cache hit)
+67 silly tarball no local data for nanoid@https://registry.npmjs.org/nanoid/-/nanoid-3.3.18.tgz. Extracting by manifest.
+68 silly tarball no local data for caniuse-lite@https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001809.tgz. Extracting by manifest.
+69 http fetch GET 200 https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz 413ms (cache miss)
+70 http fetch GET 200 https://registry.npmjs.org/@next/env/-/env-15.5.23.tgz 450ms (cache miss)
+71 http fetch GET 200 https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz 483ms (cache miss)
+72 http fetch GET 200 https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz 489ms (cache miss)
+73 http fetch GET 200 https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz 486ms (cache miss)
+74 http fetch GET 200 https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz 505ms (cache miss)
+75 http fetch GET 200 https://registry.npmjs.org/react/-/react-19.2.8.tgz 513ms (cache miss)
+76 http fetch GET 200 https://registry.npmjs.org/nanoid/-/nanoid-3.3.18.tgz 502ms (cache miss)
+77 http fetch GET 200 https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz 525ms (cache miss)
+78 http fetch GET 200 https://registry.npmjs.org/sharp/-/sharp-0.34.5.tgz 570ms (cache miss)
+79 http fetch GET 200 https://registry.npmjs.org/semver/-/semver-7.8.5.tgz 569ms (cache miss)
+80 http fetch GET 200 https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz 626ms (cache miss)
+81 http fetch GET 200 https://registry.npmjs.org/react-dom/-/react-dom-19.2.8.tgz 1007ms (cache miss)
+82 http fetch GET 200 https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz 1051ms (cache miss)
+83 http fetch GET 200 https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001809.tgz 1856ms (cache miss)
+84 http fetch GET 200 https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.34.5.tgz 2300ms (cache miss)
+85 http fetch GET 200 https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-15.5.23.tgz 10538ms (cache miss)
+86 http fetch GET 200 https://registry.npmjs.org/next/-/next-15.5.23.tgz 37641ms (cache miss)
+87 info run sharp@0.34.5 install node_modules/sharp node install/check.js || npm run build
+88 info run sharp@0.34.5 install { code: 0, signal: null }
+89 silly CHANGE node_modules/@swc/helpers
+90 silly CHANGE node_modules/@next/swc-win32-x64-msvc
+91 silly CHANGE node_modules/@next/env
+92 silly CHANGE node_modules/@img/colour
+93 silly CHANGE node_modules/@img/sharp-win32-x64
+94 silly CHANGE node_modules/styled-jsx
+95 silly CHANGE node_modules/tslib
+96 silly CHANGE node_modules/source-map-js
+97 silly CHANGE node_modules/next
+98 silly CHANGE node_modules/sharp
+99 silly CHANGE node_modules/react
+100 silly CHANGE node_modules/semver
+101 silly CHANGE node_modules/scheduler
+102 silly CHANGE node_modules/react-dom
+103 silly CHANGE node_modules/postcss
+104 silly CHANGE node_modules/nanoid
+105 silly CHANGE node_modules/caniuse-lite
+106 silly CHANGE node_modules/client-only
+107 verbose cwd E:\1. AUPP\Junior\Semester II\Vibe Coding\Lab 1 - Deploy Day\vibecode
+108 verbose os Windows_NT 10.0.26200
+109 verbose node v24.14.0
+110 verbose npm  v11.9.0
+111 verbose exit 0
+112 info ok
