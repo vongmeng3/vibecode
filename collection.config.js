@@ -14,13 +14,16 @@ const collection = {
   description: "A living archive of a piece of Khmer culture, built for ICT 340.",
 
   // Who is building this archive? Your name, as you want it shown.
-  curator: "Your Name",
+  curator: "Taing VongMeng",
 
   // Where does your knowledge come from? A person, a place, a community.
-  source: "To be gathered",
+  source: "I will be the source of this archive, as I will be curating it myself.",
 
   // How many entries are in your archive?
-  count: 0,
+  count: 50,
+
+  // What is the URL of your archive?
+  url: "https://vibecode.vercel.app",
 };
 
 export default collection;
