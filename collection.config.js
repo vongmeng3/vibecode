@@ -18,6 +18,9 @@ const collection = {
 
   // Where does your knowledge come from? A person, a place, a community.
   source: "To be gathered",
+
+  // How many entries are in your archive?
+  count: 0,
 };
 
 export default collection;
