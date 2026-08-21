@@ -14,7 +14,7 @@ const collection = {
   description: "This archive collects traditional Khmer music, preserving the rich cultural heritage of Cambodia and making it accessible to future generations.",
 
   // Who is building this archive? Your name, as you want it shown.
-  creator: "Taing VongMeng",
+  curator: "Taing VongMeng",
 
   // Where does your knowledge come from? A person, a place, a community.
   source: "I will be the source of this archive, as I will be curating it myself.",
