@@ -1,4 +1,5 @@
 import collection from "../collection.config.js";
+import EntryCard from "../components/EntryCard.js";
 
 const styles = {
   wrap: {
@@ -72,7 +73,20 @@ export default function Home() {
         <p style={styles.cardValue}>{collection.source}</p>
       </div>
 
-      <p style={styles.count}>entries in the archive: 0 (for now)</p>
+      <EntryCard
+        title="Chapei Dang Veng"
+        description="Traditional Cambodian two-stringed long-necked guitar, often played by master musicians who improvise poetic lyrics while accompanying themselves. Recognized by UNESCO as Intangible Cultural Heritage."
+        contributor="Master Kong Nay"
+        place="Phnom Penh, Cambodia"
+      />
+      <EntryCard
+        title="Pinpeat Ensemble"
+        description="Classical Khmer orchestra featuring gongs, xylophones, drums, and oboes. This ensemble has accompanied royal ceremonies, dance dramas, and Buddhist rituals for over a thousand years."
+        contributor="Royal University of Fine Arts"
+        place="Siem Reap, Cambodia"
+      />
+
+      <p style={styles.count}>entries in the archive: 2</p>
 
       <footer style={styles.footer}>
         Built in ICT 340 — Vibe Coding, American University of Phnom Penh, Fall
