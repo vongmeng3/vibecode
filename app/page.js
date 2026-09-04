@@ -7,9 +7,14 @@ import EntryCard from "../components/EntryCard.js";
 
 const styles = {
   wrap: {
-    maxWidth: 720,
+    maxWidth: 1200,
     margin: "0 auto",
-    padding: "80px 24px",
+    padding: "48px 40px 56px",
+    position: "relative",
+    background: "linear-gradient(145deg, rgba(25, 32, 42, 0.96), rgba(18, 24, 32, 0.94))",
+    border: "1px solid rgba(226, 183, 109, 0.16)",
+    borderRadius: 28,
+    boxShadow: "0 24px 70px rgba(0, 0, 0, 0.22)",
   },
   kicker: {
     fontFamily: "'Courier New', monospace",
@@ -18,23 +23,26 @@ const styles = {
     letterSpacing: 1,
   },
   title: {
-    fontSize: 48,
+    fontSize: 44,
     fontWeight: 700,
     margin: "16px 0 12px",
     lineHeight: 1.1,
+    color: "#F4F0E8",
   },
   description: {
     fontSize: 18,
     color: "#97A1B3",
     lineHeight: 1.6,
     margin: 0,
+    letterSpacing: 0.1,
   },
   card: {
     marginTop: 48,
-    padding: 24,
+    padding: 20,
     backgroundColor: "#1C222C",
-    border: "1px solid #2E3644",
-    borderRadius: 10,
+    border: "1px solid rgba(226, 183, 109, 0.18)",
+    borderRadius: 14,
+    boxShadow: "0 10px 28px rgba(0, 0, 0, 0.14)",
   },
   cardLabel: {
     fontFamily: "'Courier New', monospace",
@@ -49,9 +57,9 @@ const styles = {
   sectionLabel: {
     fontFamily: "'Courier New', monospace",
     fontSize: 14,
-    color: "#2EE6A8",
     letterSpacing: 1,
     marginTop: 48,
+    color: "#E2B76D",
   },
   searchLabel: {
     display: "block",
@@ -64,19 +72,21 @@ const styles = {
   searchInput: {
     width: "100%",
     boxSizing: "border-box",
-    padding: "12px 14px",
+    padding: "13px 16px 13px 42px",
     fontSize: 16,
     color: "#E8EDF2",
-    backgroundColor: "#1C222C",
-    border: "1px solid #2E3644",
-    borderRadius: 8,
+    backgroundColor: "rgba(28, 34, 44, 0.88)",
+    border: "1px solid rgba(151, 161, 179, 0.28)",
+    borderRadius: 999,
     outline: "none",
+    fontFamily: "inherit",
   },
   count: {
     fontFamily: "'Courier New', monospace",
     fontSize: 13,
     color: "#2EE6A8",
     margin: "16px 0 32px",
+    letterSpacing: 0.4,
   },
   none: {
     marginTop: 24,
@@ -87,6 +97,27 @@ const styles = {
     color: "#97A1B3",
     fontSize: 14,
   },
+  pagination: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 8,
+    marginTop: 32,
+    flexWrap: "wrap",
+  },
+  pageButton: {
+    padding: "8px 12px",
+    color: "#E8EDF2",
+    backgroundColor: "#1C222C",
+    border: "1px solid #2E3644",
+    borderRadius: 6,
+    cursor: "pointer",
+    fontSize: 14,
+  },
+  activePage: {
+    color: "#14181F",
+    backgroundColor: "#2EE6A8",
+  },
   footer: {
     marginTop: 64,
     paddingTop: 24,
@@ -96,72 +127,147 @@ const styles = {
   },
 };
 
-// An entry matches when the query appears in any of the fields we
-// chose to search: title, story (description), place, contributor,
-// or type ("song" / "instrument"). toLowerCase() and includes() are
-// Unicode-aware, so this works for both English and Khmer text.
+// Normalize each searchable value without stripping Khmer Unicode, then
+// search both language versions of every text field and the entry type.
+function normalize(value) {
+  return (value || "").normalize("NFC").toLocaleLowerCase();
+}
+
 function matches(entry, query) {
-  const q = query.trim().toLowerCase();
+  const q = normalize(query.trim());
   if (!q) return true; // empty query shows everything
   return [
-    entry.title,
-    entry.description,
-    entry.place,
-    entry.contributor,
+    entry.titleEn,
+    entry.titleKh,
+    entry.descriptionEn,
+    entry.descriptionKh,
+    entry.placeEn,
+    entry.placeKh,
+    entry.contributorEn,
+    entry.contributorKh,
     entry.type,
-  ].some((field) => (field || "").toLowerCase().includes(q));
+  ].some((field) => normalize(field).includes(q));
 }
 
 export default function Home() {
   const [query, setQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
   const filtered = entries.filter((entry) => matches(entry, query));
+  const entriesPerPage = 6;
+  const totalPages = Math.max(1, Math.ceil(filtered.length / entriesPerPage));
+  const safeCurrentPage = Math.min(currentPage, totalPages);
+  const pageStart = (safeCurrentPage - 1) * entriesPerPage;
+  const paginatedEntries = filtered.slice(pageStart, pageStart + entriesPerPage);
 
   return (
-    <main style={styles.wrap}>
-      <p style={styles.kicker}>KHMER LIVING ARCHIVE</p>
-      <h1 style={styles.title}>{collection.name}</h1>
-      <p style={styles.description}>{collection.description}</p>
+    <main className="archive-page" style={styles.wrap}>
+      <header className="archive-hero">
+        <div className="archive-header-row">
+          <div>
+            <p className="archive-kicker" style={styles.kicker}>KHMER LIVING ARCHIVE</p>
+            <h1 className="archive-title" style={styles.title}>{collection.name}</h1>
+            <p className="archive-description" style={styles.description}>{collection.description}</p>
+          </div>
+          <div className="archive-search-wrap">
+            <label className="archive-search-label" style={styles.searchLabel} htmlFor="archive-search">
+              SEARCH THE ARCHIVE
+            </label>
+            <div className="archive-search-control">
+              <span className="archive-search-icon" aria-hidden="true">⌕</span>
+              <input
+                className="archive-search-input"
+                id="archive-search"
+                type="search"
+                placeholder="Search music, instruments, places..."
+                value={query}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  setCurrentPage(1);
+                }}
+                style={styles.searchInput}
+                aria-label="Search the archive"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
 
-      <div style={styles.card}>
+      <div className="archive-info-card" style={styles.card}>
         <p style={styles.cardLabel}>CURATED BY</p>
         <p style={styles.cardValue}>{collection.curator}</p>
       </div>
-      <div style={styles.card}>
+      <div className="archive-info-card" style={styles.card}>
         <p style={styles.cardLabel}>SOURCE</p>
         <p style={styles.cardValue}>{collection.source}</p>
       </div>
 
-      <h2 style={styles.sectionLabel}>THE COLLECTION</h2>
-
-      <label style={styles.searchLabel} htmlFor="archive-search">
-        SEARCH THE ARCHIVE
-      </label>
-      <input
-        id="archive-search"
-        type="search"
-        placeholder="Filter by title, story, place, or contributor"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        style={styles.searchInput}
-      />
+      <h2 className="archive-section-label" style={styles.sectionLabel}>THE COLLECTION</h2>
 
       <p style={styles.count}>
         showing {filtered.length} of {entries.length} entries
       </p>
 
-      {filtered.map((entry) => (
-        <EntryCard
-          key={entry.title}
-          title={entry.title}
-          description={entry.description}
-          contributor={entry.contributor}
-          place={entry.place}
-          type={entry.type}
-        />
-      ))}
+      <div className="archive-results archive-entry-grid">
+        {paginatedEntries.map((entry) => (
+          <EntryCard
+            key={entry.title}
+            titleEn={entry.titleEn}
+            titleKh={entry.titleKh}
+            descriptionEn={entry.descriptionEn}
+            descriptionKh={entry.descriptionKh}
+            contributorEn={entry.contributorEn}
+            contributorKh={entry.contributorKh}
+            placeEn={entry.placeEn}
+            placeKh={entry.placeKh}
+            type={entry.type}
+          />
+        ))}
+      </div>
 
       {filtered.length === 0 && (
         <p style={styles.none}>No entries found.</p>
+      )}
+
+      {filtered.length > 0 && totalPages > 1 && (
+        <nav className="archive-pagination" style={styles.pagination} aria-label="Pagination">
+          <button
+            type="button"
+            className="archive-page-button"
+            style={styles.pageButton}
+            onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          {Array.from({ length: totalPages }, (_, index) => index + 1).map(
+            (page) => (
+              <button
+                type="button"
+                key={page}
+                className="archive-page-button"
+                style={{
+                  ...styles.pageButton,
+                   ...(safeCurrentPage === page ? styles.activePage : {}),
+                }}
+                 onClick={() => setCurrentPage(page)}
+                 aria-current={safeCurrentPage === page ? "page" : undefined}
+              >
+                {page}
+              </button>
+            ),
+          )}
+          <button
+            type="button"
+            className="archive-page-button"
+            style={styles.pageButton}
+            onClick={() =>
+              setCurrentPage((page) => Math.min(totalPages, page + 1))
+            }
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
+        </nav>
       )}
       <footer style={styles.footer}>
         Built in ICT 340 — Vibe Coding, American University of Phnom Penh, Fall
