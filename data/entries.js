@@ -94,7 +94,7 @@ const entries = [
     title: "Kong Vong Thom",
     titleEn: "Kong Vong Thom",
     titleKh: "គងវង់ធំ",
-    image: "/images/kongVongThom.jpg",
+    image: "/images/KongVongThom.jpg",
     type: "instrument",
     description:
       "A circular rack of sixteen tuned gongs that the player circles while striking with soft mallets. It carries the low melody of the pinpeat ensemble and is the larger, older sibling of the kong toch.",
@@ -133,7 +133,7 @@ const entries = [
     slug: "kanseng-kraham",
     titleEn: "Kansaeng Kraham",
     titleKh: "កន្សែងក្រហម",
-    image: "/images/kansaengKraham.jpg",
+    image: "/images/KansaengKraham.jpg",
     type: "song",
     description:
       "A traditional Khmer song about a red scarf, often sung as a gentle love song expressing affection and remembrance.",
