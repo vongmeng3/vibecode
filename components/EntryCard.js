@@ -1,4 +1,4 @@
-import { useState } from "react";
+import Link from "next/link";
 
 const styles = {
   card: {
@@ -82,13 +82,28 @@ export default function EntryCard({
   placeEn,
   placeKh,
   type,
+  image,
+  href,
+  highlight,
+  tags = [],
 }) {
   const isSong = type === "song";
-  const [isExpanded, setIsExpanded] = useState(false);
-  const hasLongDescription = descriptionKh.length > 120 || descriptionEn.length > 160;
-
+  const renderHighlight = highlight || ((value) => value);
   return (
-    <div className="archive-card" style={styles.card}>
+    <Link href={href} className="archive-card" style={{ ...styles.card, textDecoration: "none", color: "inherit" }}>
+      {image ? (
+        <img
+          className="archive-card-image"
+          src={image}
+          alt={titleEn}
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <div className="archive-card-image archive-image-placeholder" role="img" aria-label={`${titleEn} image update soon`}>
+          <span>Update soon</span>
+        </div>
+      )}
       <p style={styles.label}>ENTRY</p>
       <span
         style={{
@@ -99,36 +114,31 @@ export default function EntryCard({
         {isSong ? "SONG" : "INSTRUMENT"}
       </span>
       <h3 style={styles.title}>
-        {titleKh}
+        <span className="khmer-title">{renderHighlight(titleKh)}</span>
         <br />
-        {titleEn}
+        <span className="english-text">{renderHighlight(titleEn)}</span>
       </h3>
+      <div className="archive-card-tags" aria-label="Keywords">
+        {tags.map((tag) => <span key={tag}>{renderHighlight(tag)}</span>)}
+      </div>
       <div style={styles.desc}>
         <div
           className="archive-card-description"
           style={{
             ...styles.descContent,
-            ...(isExpanded ? {} : styles.descPreview),
+            ...styles.descPreview,
           }}
         >
-          <strong>ខ្មែរ:</strong> {descriptionKh}
+          <span className="khmer-text"><strong>ខ្មែរ:</strong> {renderHighlight(descriptionKh)}</span>
           <br />
-          <strong>English:</strong> {descriptionEn}
+          <span className="english-text"><strong>English:</strong> {renderHighlight(descriptionEn)}</span>
         </div>
-        {hasLongDescription && (
-          <button
-            type="button"
-            style={styles.seeMore}
-            onClick={() => setIsExpanded((expanded) => !expanded)}
-            aria-expanded={isExpanded}
-          >
-            {isExpanded ? "See Less" : "See More"}
-          </button>
-        )}
       </div>
       <p style={styles.meta}>
-        Contributor: {contributorKh} / {contributorEn} • Place: {placeKh} / {placeEn}
+        Contributor: <span className="khmer-contributor">{contributorKh}</span> / <span className="english-text">{contributorEn}</span>
+        <span aria-hidden="true"> • </span>
+        Place: <span className="khmer-place">{placeKh}</span> / <span className="english-text">{placeEn}</span>
       </p>
-    </div>
+    </Link>
   );
 }

@@ -18,6 +18,7 @@ const entries = [
     title: "Chapei Dang Veng",
     titleEn: "Chapei Dang Veng",
     titleKh: "ចាប៉ីដងវែង",
+    image: "/images/ChapeiDangVeng.jpg",
     type: "instrument",
     description:
       "A traditional Cambodian two-stringed long-necked guitar, often played by master musicians who improvise poetic lyrics while accompanying themselves. Recognized by UNESCO as Intangible Cultural Heritage.",
@@ -36,6 +37,7 @@ const entries = [
     title: "Pinpeat Ensemble",
     titleEn: "Pinpeat Ensemble",
     titleKh: "វង់ពិណពាទ្យ",
+    image: "/images/Pinpeat.jpg",
     type: "instrument",
     description:
       "A classical Khmer orchestra featuring gongs, xylophones, drums, and oboes. This ensemble has accompanied royal ceremonies, dance dramas, and Buddhist rituals for over a thousand years.",
@@ -54,6 +56,7 @@ const entries = [
     title: "Roneat Ek",
     titleEn: "Roneat Ek",
     titleKh: "រនាតឯក",
+    image: "/images/RoneatEk.jpg",
     type: "instrument",
     description:
       "A high-pitched wooden xylophone with twenty-one bamboo keys, and the lead instrument of the pinpeat orchestra. Its player carries the melody and sets the tempo for the rest of the ensemble.",
@@ -72,6 +75,7 @@ const entries = [
     title: "Skor Thom",
     titleEn: "Skor Thom",
     titleKh: "ស្គរធំ",
+    image: "/images/SkorThom.jpg",
     type: "instrument",
     description:
       "A pair of large barrel drums struck with mallets, providing the deep heartbeat of the pinpeat orchestra and royal ceremonies. The two drums are tuned slightly apart so their tones vibrate against each other.",
@@ -90,6 +94,7 @@ const entries = [
     title: "Kong Vong Thom",
     titleEn: "Kong Vong Thom",
     titleKh: "គងវង់ធំ",
+    image: "/images/kongVongThom.jpg",
     type: "instrument",
     description:
       "A circular rack of sixteen tuned gongs that the player circles while striking with soft mallets. It carries the low melody of the pinpeat ensemble and is the larger, older sibling of the kong toch.",
@@ -108,6 +113,7 @@ const entries = [
     title: "Tro",
     titleEn: "Tro",
     titleKh: "ទ្រ",
+    image: "/images/Tro.jpg",
     type: "instrument",
     description:
       "A family of bowed stringed instruments — the tro sau toch, tro sau thom, tro ou, and tro che — whose silk strings sing in the mohori and arak ensembles. Skilled players bend the notes between pitches, imitating the human voice.",
@@ -123,16 +129,18 @@ const entries = [
     placeKh: "ខេត្តកណ្តាល ប្រទេសកម្ពុជា",
   },
   {
-    title: "Khloy",
-    titleEn: "Khloy",
-    titleKh: "ខ្លុយ",
-    type: "instrument",
+    title: "កន្សែងក្រហម",
+    slug: "kanseng-kraham",
+    titleEn: "Kansaeng Kraham",
+    titleKh: "កន្សែងក្រហម",
+    image: "/images/kansaengKraham.jpg",
+    type: "song",
     description:
-      "A bamboo flute played end-on, its breathy voice heard in folk ensembles and village nights. Paired with the chapei, the khloy accompanies lullabies, love songs, and improvised verse far from the palace.",
+      "A traditional Khmer song about a red scarf, often sung as a gentle love song expressing affection and remembrance.",
     descriptionEn:
-      "A bamboo flute played end-on, its breathy voice heard in folk ensembles and village nights. Paired with the chapei, the khloy accompanies lullabies, love songs, and improvised verse far from the palace.",
+      "A traditional Khmer song about a red scarf, often sung as a gentle love song expressing affection and remembrance.",
     descriptionKh:
-      "ខ្លុយជាឧបករណ៍ផ្លុំធ្វើពីឫស្សី ដែលផ្លុំពីចុង ហើយមានសំឡេងខ្យល់ឮក្នុងវង់តន្ត្រីប្រជាប្រិយ និងរាត្រីតាមភូមិ។ ខ្លុយដែលលេងជាមួយចាប៉ី អមបទបំពេ បទស្នេហា និងកំណាព្យភ្លាមៗនៅឆ្ងាយពីព្រះបរមរាជវាំង។",
+      "កន្សែងក្រហមជាបទចម្រៀងប្រពៃណីខ្មែរ អំពីកន្សែងពណ៌ក្រហម ដែលច្រៀងបែបបទស្នេហាដ៏ទន់ភ្លន់ ដើម្បីបង្ហាញសេចក្តីស្រឡាញ់ និងការនឹករឭក។",
     contributor: "Ros Sopheap",
     contributorEn: "Ros Sopheap",
     contributorKh: "រស់ សុភ័ព្ទ",
@@ -141,16 +149,18 @@ const entries = [
     placeKh: "ខេត្តកំពង់ចាម ប្រទេសកម្ពុជា",
   },
   {
-    title: "Mohori Ensemble",
-    titleEn: "Mohori Ensemble",
-    titleKh: "វង់មហោរី",
-    type: "instrument",
+    title: "បាយខុន",
+    slug: "baykhon",
+    titleEn: "Baykhon",
+    titleKh: "បាយខុន",
+    image: "/images/Baykhon.jpg",
+    type: "song",
     description:
-      "A softer, more intimate ensemble that blends pinpeat and folk instruments — tro, khloy, roneat, and drums — to accompany weddings, festivals, and everyday entertainment rather than royal ceremony.",
+      "A traditional Khmer song associated with the Baykhon wedding blessing ceremony. It is performed to offer good wishes and bring happiness to the newly married couple.",
     descriptionEn:
-      "A softer, more intimate ensemble that blends pinpeat and folk instruments — tro, khloy, roneat, and drums — to accompany weddings, festivals, and everyday entertainment rather than royal ceremony.",
+      "A traditional Khmer song associated with the Baykhon wedding blessing ceremony. It is performed to offer good wishes and bring happiness to the newly married couple.",
     descriptionKh:
-      "វង់មហោរីជាវង់តន្ត្រីដែលមានសំឡេងទន់ភ្លន់ និងជិតស្និទ្ធជាងមុន ដោយលាយបញ្ចូលឧបករណ៍ពិណពាទ្យ និងឧបករណ៍ប្រជាប្រិយ ដូចជាទ្រ ខ្លុយ រនាត និងស្គរ ដើម្បីអមពិធីមង្គលការ ពិធីបុណ្យ និងការកម្សាន្តប្រចាំថ្ងៃ ជំនួសឱ្យព្រះរាជពិធី។",
+      "បាយខុនជាបទចម្រៀងប្រពៃណីខ្មែរ ដែលពាក់ព័ន្ធនឹងពិធីសំពះផ្ទឹមក្នុងមង្គលការ។ បទនេះប្រគំដើម្បីជូនពរ និងនាំសុភមង្គលដល់គូស្វាមីភរិយាថ្មី។",
     contributor: "Bun Rany",
     contributorEn: "Bun Rany",
     contributorKh: "ប៊ុន រ៉ានី",
@@ -162,6 +172,7 @@ const entries = [
     title: "Pleng Kar",
     titleEn: "Pleng Kar",
     titleKh: "ភ្លេងការ",
+    image: "/images/PlengKar.jpg",
     type: "song",
     description:
       "The traditional Khmer wedding music repertoire performed through every stage of the ceremony, from the groom's procession to the final blessing. Passed down by village wedding ensembles, it is one of the most recognizable sounds of Khmer celebration.",
@@ -180,6 +191,7 @@ const entries = [
     title: "Pleng Arak",
     titleEn: "Pleng Arak",
     titleKh: "ភ្លេងអារក្ស",
+    image: "/images/PlengArak.png",
     type: "song",
     description:
       "The traditional healing repertoire played to call and honor spirits during Khmer ceremonies. Its hypnotic rhythms and chanted verses have accompanied ritual healing for generations.",
@@ -198,6 +210,7 @@ const entries = [
     title: "Choun Por",
     titleEn: "Choun Por",
     titleKh: "ជូនពរ",
+    image: "/images/ChonPor.png",
     type: "song",
     description:
       "The ceremonial music that welcomes the groom's procession at the start of a Khmer wedding. Lively and joyful, it signals the beginning of the marriage rituals and sets the tone for the whole celebration.",
@@ -216,6 +229,7 @@ const entries = [
     title: "Smot",
     titleEn: "Smot",
     titleKh: "ស្មូត",
+    image: "/images/smot.jpg",
     type: "song",
     description:
       "Traditional Khmer Buddhist chanting repertoire, sung by monks and lay chanters at funerals and memorials. Its slow, meditative melodies carry the words of sacred texts and give voice to remembrance.",
@@ -231,5 +245,10 @@ const entries = [
     placeKh: "រាជធានីភ្នំពេញ ប្រទេសកម្ពុជា",
   },
 ];
+
+entries.forEach((entry) => {
+  entry.youtubeUrl = "https://www.youtube.com/results?search_query=" + encodeURIComponent(entry.titleEn + " Khmer music");
+  entry.tags = [entry.type, "Khmer music", entry.placeEn.split(",")[0]];
+});
 
 export default entries;

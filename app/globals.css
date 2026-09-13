@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -13,6 +15,12 @@ body {
     radial-gradient(circle at 90% 20%, rgba(46, 230, 168, 0.08), transparent 28rem),
     #0f141a;
 }
+
+html, body { scroll-behavior: smooth; }
+body, button, input { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+.archive-nav { position: relative; z-index: 5; display: flex; align-items: center; justify-content: flex-end; gap: 8px; width: calc(100% - 32px); max-width: 1200px; margin: 0 auto; padding: 18px 40px 10px; }
+.archive-nav-link { padding: 8px 12px; color: #97A1B3; border-radius: 999px; font-size: 14px; text-decoration: none; transition: color 180ms ease, background-color 180ms ease; }
+.archive-nav-link:hover, .archive-nav-link.is-active { color: #14181F; background: #E2B76D; }
 
 main.archive-page {
   width: calc(100% - 32px);
@@ -30,7 +38,7 @@ input:focus-visible {
 }
 
 .archive-page {
-  animation: page-enter 700ms ease-out both;
+  animation: none;
 }
 
 .archive-hero {
@@ -51,18 +59,7 @@ input:focus-visible {
 
 .archive-search-wrap {
   flex: 0 1 360px;
-  margin-top: 22px;
-}
-
-.archive-search-icon {
-  position: absolute;
-  z-index: 1;
-  top: 37px;
-  left: 16px;
-  color: #e2b76d;
-  font-size: 24px;
-  line-height: 1;
-  pointer-events: none;
+  margin-top: 8px;
 }
 
 .archive-hero::after {
@@ -104,7 +101,7 @@ input:focus-visible {
 .archive-search-wrap {
   position: relative;
   flex: 0 1 360px;
-  margin: 22px 0 6px;
+  margin: 8px 0 6px;
 }
 
 .archive-search-wrap .archive-search-label {
@@ -112,6 +109,9 @@ input:focus-visible {
 }
 
 .archive-search-input {
+  width: 100%;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
   transition: border-color 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
 }
 
@@ -125,8 +125,39 @@ input:focus-visible {
   box-shadow: 0 0 0 4px rgba(46, 230, 168, 0.1);
 }
 
+.archive-search-control { position: relative; }
+.archive-suggestions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+.archive-suggestion { padding: 5px 10px; border: 1px solid rgba(46, 230, 168, .35); border-radius: 999px; color: #bcebdc; background: rgba(46, 230, 168, .08); cursor: pointer; font-size: 12px; }
+.archive-card-image { width: calc(100% + 48px); height: 150px; object-fit: cover; object-position: center; margin: -24px -24px 20px; border-radius: 10px 10px 0 0; }
+.archive-image-placeholder,
+.entry-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #97A1B3;
+  background: linear-gradient(135deg, #202934, #151b23);
+  border: 1px dashed rgba(226, 183, 109, 0.35);
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.04em;
+}
+.archive-image-placeholder { text-transform: uppercase; }
+.archive-image-placeholder span,
+.entry-image-placeholder span { opacity: 0.9; }
+.entry-image-placeholder {
+  width: 100%;
+  height: min(560px, 52vw);
+  min-height: 240px;
+  border-radius: 14px;
+  margin-bottom: 28px;
+}
+.archive-card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: -2px 0 14px; }
+.archive-card-tags span { padding: 4px 8px; color: #BCEBDC; background: rgba(46, 230, 168, .08); border: 1px solid rgba(46, 230, 168, .25); border-radius: 999px; font-size: 11px; }
+.archive-card:focus-visible { outline: 2px solid #e2b76d; outline-offset: 4px; }
+mark { color: #14181f; background: #e2b76d; border-radius: 3px; padding: 0 2px; }
+.archive-card-description, .entry-detail-panel p { text-align: justify; text-justify: inter-character; overflow-wrap: anywhere; word-break: normal; }
+
 .archive-results {
-  animation: results-enter 350ms ease-out both;
+  animation: none;
 }
 
 .archive-entry-grid {
@@ -145,21 +176,12 @@ input:focus-visible {
   display: flex;
   flex-direction: column;
   min-height: 310px;
-  animation: card-enter 500ms ease-out both;
+  animation: none;
   transition: border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
 }
 
 .archive-card-description {
   min-height: 69px;
-}
-
-.archive-see-more {
-  transition: color 180ms ease, transform 180ms ease;
-}
-
-.archive-see-more:hover {
-  color: #e2b76d !important;
-  transform: translateX(3px);
 }
 
 .archive-card:hover {
@@ -168,6 +190,25 @@ input:focus-visible {
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.24), 0 0 0 1px rgba(226, 183, 109, 0.08);
 }
 
+.khmer-text {
+  font-family: "Battambang", "Khmer OS Battambang", "Noto Sans Khmer", sans-serif;
+  font-weight: 400;
+  line-height: 1.9;
+}
+.khmer-text strong { font-weight: 700; }
+.khmer-title {
+  font-family: "Battambang", "Khmer OS Battambang", "Noto Sans Khmer", sans-serif;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+.khmer-contributor,
+.khmer-place {
+  font-family: "Battambang", "Khmer OS Battambang", "Noto Sans Khmer", sans-serif;
+  line-height: 1.7;
+}
+.english-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
 .archive-card:nth-child(2) { animation-delay: 45ms; }
 .archive-card:nth-child(3) { animation-delay: 90ms; }
 .archive-card:nth-child(4) { animation-delay: 135ms; }
@@ -175,7 +216,7 @@ input:focus-visible {
 .archive-card:nth-child(6) { animation-delay: 225ms; }
 
 .archive-pagination {
-  animation: results-enter 350ms ease-out both;
+  animation: none;
 }
 
 .archive-page-button {
@@ -215,6 +256,8 @@ input:focus-visible {
 }
 
 @media (max-width: 600px) {
+  .archive-nav { position: sticky; top: 0; justify-content: center; width: calc(100% - 20px); padding: 10px 18px; background: rgba(15, 20, 26, .94); backdrop-filter: blur(12px); }
+  .archive-nav-link { padding: 7px 10px; font-size: 13px; }
   .archive-page {
     padding: 32px 18px 40px !important;
   }
@@ -231,13 +274,21 @@ input:focus-visible {
     display: block;
   }
 
+  .archive-hero { padding-bottom: 0; }
+
   .archive-search-wrap {
-    margin-top: 24px;
+    margin-top: 18px;
     max-width: none;
   }
 
+  .archive-search-label { margin-bottom: 8px !important; }
+
+  .archive-suggestions { max-height: none; overflow: visible; }
+
   .archive-search-input {
     width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
   .archive-description {
@@ -257,6 +308,13 @@ input:focus-visible {
   .archive-card {
     min-height: 0;
   }
+
+
+  .entry-detail-page { padding: 28px 16px 48px !important; }
+  .entry-detail-panel { padding: 22px !important; }
+  .entry-detail-panel h1 { font-size: 34px !important; }
+  .archive-card-image { height: 180px; }
+  .entry-image-placeholder { height: 56vw; min-height: 200px; }
 
   .archive-pagination {
     gap: 5px !important;

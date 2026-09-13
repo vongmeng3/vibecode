@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import collection from "../collection.config.js";
 import entries from "../data/entries.js";
 import EntryCard from "../components/EntryCard.js";
+import ArchiveNav from "../components/ArchiveNav.js";
+import { entrySlug } from "../lib/entry-slugs.js";
 
 const styles = {
   wrap: {
@@ -146,53 +148,82 @@ function matches(entry, query) {
     entry.contributorEn,
     entry.contributorKh,
     entry.type,
+    ...(entry.tags || []),
   ].some((field) => normalize(field).includes(q));
+}
+
+function highlight(value, query) {
+  const text = value || "";
+  const term = query.trim();
+  if (!term) return text;
+  const parts = text.split(new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "ig"));
+  return parts.map((part, index) =>
+    part.toLocaleLowerCase() === term.toLocaleLowerCase() ? <mark key={index}>{part}</mark> : part,
+  );
 }
 
 export default function Home() {
   const [query, setQuery] = useState("");
+  const [debouncedQuery, setDebouncedQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const filtered = entries.filter((entry) => matches(entry, query));
+  useEffect(() => {
+    const timer = window.setTimeout(() => setDebouncedQuery(query), 250);
+    return () => window.clearTimeout(timer);
+  }, [query]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [currentPage]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [debouncedQuery]);
+
+  const filtered = useMemo(() => entries.filter((entry) => matches(entry, debouncedQuery)), [debouncedQuery]);
+  const suggestions = [...new Set(entries.flatMap((entry) => entry.tags || []))].slice(0, 8);
   const entriesPerPage = 6;
   const totalPages = Math.max(1, Math.ceil(filtered.length / entriesPerPage));
   const safeCurrentPage = Math.min(currentPage, totalPages);
   const pageStart = (safeCurrentPage - 1) * entriesPerPage;
   const paginatedEntries = filtered.slice(pageStart, pageStart + entriesPerPage);
+  const displayedCount = Math.min(safeCurrentPage * entriesPerPage, filtered.length);
 
   return (
     <main className="archive-page" style={styles.wrap}>
+      <ArchiveNav />
       <header className="archive-hero">
         <div className="archive-header-row">
           <div>
             <p className="archive-kicker" style={styles.kicker}>KHMER LIVING ARCHIVE</p>
             <h1 className="archive-title" style={styles.title}>{collection.name}</h1>
-            <p className="archive-description" style={styles.description}>{collection.description}</p>
+            <p className="archive-description english-text" style={styles.description}>{collection.description}</p>
           </div>
           <div className="archive-search-wrap">
             <label className="archive-search-label" style={styles.searchLabel} htmlFor="archive-search">
               SEARCH THE ARCHIVE
             </label>
             <div className="archive-search-control">
-              <span className="archive-search-icon" aria-hidden="true">⌕</span>
               <input
                 className="archive-search-input"
                 id="archive-search"
                 type="search"
                 placeholder="Search music, instruments, places..."
                 value={query}
-                onChange={(e) => {
-                  setQuery(e.target.value);
-                  setCurrentPage(1);
-                }}
+                onChange={(e) => { setQuery(e.target.value); setCurrentPage(1); }}
                 style={styles.searchInput}
                 aria-label="Search the archive"
               />
+            </div>
+            <div className="archive-suggestions" aria-label="Related search terms">
+              {suggestions.filter((term) => !query || term.toLocaleLowerCase().includes(query.toLocaleLowerCase())).map((term) => (
+                <button type="button" key={term} className="archive-suggestion" onClick={() => { setQuery(term); setCurrentPage(1); }}>{term}</button>
+              ))}
             </div>
           </div>
         </div>
       </header>
 
-      <div className="archive-info-card" style={styles.card}>
+      <div id="about" className="archive-info-card" style={styles.card}>
         <p style={styles.cardLabel}>CURATED BY</p>
         <p style={styles.cardValue}>{collection.curator}</p>
       </div>
@@ -201,10 +232,10 @@ export default function Home() {
         <p style={styles.cardValue}>{collection.source}</p>
       </div>
 
-      <h2 className="archive-section-label" style={styles.sectionLabel}>THE COLLECTION</h2>
+      <h2 id="collection" className="archive-section-label" style={styles.sectionLabel}>THE COLLECTION</h2>
 
       <p style={styles.count}>
-        showing {filtered.length} of {entries.length} entries
+        Showing {displayedCount} of {filtered.length} entries
       </p>
 
       <div className="archive-results archive-entry-grid">
@@ -215,6 +246,10 @@ export default function Home() {
             titleKh={entry.titleKh}
             descriptionEn={entry.descriptionEn}
             descriptionKh={entry.descriptionKh}
+            image={entry.image}
+            href={`/entries/${entrySlug(entry)}${debouncedQuery ? `?q=${encodeURIComponent(debouncedQuery)}` : ""}`}
+            highlight={(value) => highlight(value, debouncedQuery)}
+            tags={entry.tags}
             contributorEn={entry.contributorEn}
             contributorKh={entry.contributorKh}
             placeEn={entry.placeEn}
