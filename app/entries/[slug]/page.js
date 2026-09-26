@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import entries from "../../../data/entries.js";
+import { createClient } from "../../../lib/supabase/server.js";
 import { entrySlug, findEntryBySlug } from "../../../lib/entry-slugs.js";
 
 function highlight(value, query) {
@@ -10,10 +10,6 @@ function highlight(value, query) {
   return String(value).split(new RegExp(`(${terms.join("|")})`, "gi")).map((part, index) =>
     terms.some((term) => part.toLocaleLowerCase() === term.toLocaleLowerCase()) ? <mark key={`${part}-${index}`}>{part}</mark> : part,
   );
-}
-
-export function generateStaticParams() {
-  return entries.map((entry) => ({ slug: entrySlug(entry) }));
 }
 
 const styles = {
@@ -35,6 +31,28 @@ const styles = {
 export default async function EntryDetailPage({ params, searchParams }) {
   const { slug } = await params;
   const query = (await searchParams)?.q || "";
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("entries")
+    .select("*")
+    .order("created_at", { ascending: true });
+  if (error) notFound();
+
+  const entries = (data || []).map((entry) => ({
+    ...entry,
+    slug: entrySlug({...entry, title: entry.title_en}),
+    title: entry.title_en,
+    titleEn: entry.title_en,
+    titleKh: entry.title_kh,
+    descriptionEn: entry.description_en,
+    descriptionKh: entry.description_kh,
+    contributorEn: entry.contributor_en,
+    contributorKh: entry.contributor_kh,
+    placeEn: entry.place_en,
+    placeKh: entry.place_kh,
+    youtubeUrl: entry.youtube_url,
+    youtubeId: entry.youtube_id,
+  }));
   const entry = findEntryBySlug(entries, slug);
   if (!entry) notFound();
 

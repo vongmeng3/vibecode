@@ -2,10 +2,10 @@
 
 import { useEffect, useMemo, useState } from "react";
 import collection from "../collection.config.js";
-import entries from "../data/entries.js";
 import EntryCard from "../components/EntryCard.js";
 import ArchiveNav from "../components/ArchiveNav.js";
 import { entrySlug } from "../lib/entry-slugs.js";
+import { createClient } from "../lib/supabase/client.js";
 
 const styles = {
   wrap: {
@@ -163,9 +163,56 @@ function highlight(value, query) {
 }
 
 export default function Home() {
+  const [entries, setEntries] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState("");
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    const supabase = createClient();
+    let isActive = true;
+
+    async function loadEntries() {
+      const { data, error } = await supabase
+        .from("entries")
+        .select("*")
+        .order("created_at", { ascending: true });
+
+      if (!isActive) return;
+
+      if (error) {
+        setLoadError("Unable to load archive entries. Please try again later.");
+      } else {
+        const mappedEntries = (data || []).map((entry) => ({
+          ...entry,
+          slug: entrySlug({...entry, title: entry.title_en}),
+          title: entry.title_en,
+          titleEn: entry.title_en,
+          titleKh: entry.title_kh,
+          descriptionEn: entry.description_en,
+          descriptionKh: entry.description_kh,
+          contributorEn: entry.contributor_en,
+          contributorKh: entry.contributor_kh,
+          placeEn: entry.place_en,
+          placeKh: entry.place_kh,
+          youtubeUrl: entry.youtube_url,
+          youtubeId: entry.youtube_id,
+        }));
+        setEntries(mappedEntries);
+      }
+
+      setIsLoading(false);
+    }
+
+    loadEntries();
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
   useEffect(() => {
     const timer = window.setTimeout(() => setDebouncedQuery(query), 250);
     return () => window.clearTimeout(timer);
@@ -179,7 +226,10 @@ export default function Home() {
     setCurrentPage(1);
   }, [debouncedQuery]);
 
-  const filtered = useMemo(() => entries.filter((entry) => matches(entry, debouncedQuery)), [debouncedQuery]);
+  const filtered = useMemo(
+    () => entries.filter((entry) => matches(entry, debouncedQuery)),
+    [entries, debouncedQuery],
+  );
   const suggestions = [...new Set(entries.flatMap((entry) => entry.tags || []))].slice(0, 8);
   const entriesPerPage = 6;
   const totalPages = Math.max(1, Math.ceil(filtered.length / entriesPerPage));
@@ -234,14 +284,21 @@ export default function Home() {
 
       <h2 id="collection" className="archive-section-label" style={styles.sectionLabel}>THE COLLECTION</h2>
 
-      <p style={styles.count}>
-        Showing {displayedCount} of {filtered.length} entries
-      </p>
+      {!isLoading && !loadError && (
+        <p style={styles.count}>
+          Showing {displayedCount} of {filtered.length} entries
+        </p>
+      )}
 
-      <div className="archive-results archive-entry-grid">
-        {paginatedEntries.map((entry) => (
+      {isLoading && <p style={styles.none}>Loading archive entries...</p>}
+
+      {loadError && <p style={styles.none} role="alert">{loadError}</p>}
+
+      {!isLoading && !loadError && (
+        <div className="archive-results archive-entry-grid">
+          {paginatedEntries.map((entry) => (
           <EntryCard
-            key={entry.title}
+            key={entry.id}
             titleEn={entry.titleEn}
             titleKh={entry.titleKh}
             descriptionEn={entry.descriptionEn}
@@ -256,14 +313,15 @@ export default function Home() {
             placeKh={entry.placeKh}
             type={entry.type}
           />
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
 
-      {filtered.length === 0 && (
+      {!isLoading && !loadError && filtered.length === 0 && (
         <p style={styles.none}>No entries found.</p>
       )}
 
-      {filtered.length > 0 && totalPages > 1 && (
+      {!isLoading && !loadError && filtered.length > 0 && totalPages > 1 && (
         <nav className="archive-pagination" style={styles.pagination} aria-label="Pagination">
           <button
             type="button"
