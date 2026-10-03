@@ -119,7 +119,9 @@ export default function EntryCard({
         <span className="english-text">{renderHighlight(titleEn)}</span>
       </h3>
       <div className="archive-card-tags" aria-label="Keywords">
-        {tags.map((tag) => <span key={tag}>{renderHighlight(tag)}</span>)}
+        {(Array.isArray(tags) ? tags : []).map((tag) => (
+          <span key={tag}>{renderHighlight(tag)}</span>
+        ))}
       </div>
       <div style={styles.desc}>
         <div

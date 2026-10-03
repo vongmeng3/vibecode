@@ -56,6 +56,7 @@ export default function ArchiveNav({ current = "archive" }) {
         <Link className={`archive-nav-link ${current === "archive" ? "is-active" : ""}`} href="/" aria-current={current === "archive" ? "page" : undefined}>Archive</Link>
         <Link className="archive-nav-link" href="/#collection">Collection</Link>
         <Link className="archive-nav-link" href="/#about">About</Link>
+        <Link className={`archive-nav-link ${current === "contribute" ? "is-active" : ""}`} href="/contribute" aria-current={current === "contribute" ? "page" : undefined}>Contribute</Link>
         <div style={accountStyles.wrap}>
           <button
             type="button"
@@ -72,7 +73,6 @@ export default function ArchiveNav({ current = "archive" }) {
               height="20"
               style={{ filter: "invert(1) brightness(0.9)" }}
             />
-            
           </button>
           {isAccountMenuOpen && (
             <div style={accountStyles.menu} role="menu">
