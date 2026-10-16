@@ -192,14 +192,14 @@ const YOUTUBE_HOSTS = [
   "youtu.be",
 ];
 
-// Check whether text contains Khmer characters
+// Khmer letters, excluding digits, punctuation, and standalone vowel marks
 function containsKhmer(text) {
-  return /[\u1780-\u17FF]/u.test(text);
+  return /[\u1780-\u17B3]/u.test(text);
 }
 
-// Check whether text contains English letters
+// Script checks guide bilingual input; they do not detect language or translation quality.
 function containsEnglish(text) {
-  return /[A-Za-z]/.test(text);
+  return /\p{Script=Latin}/u.test(text);
 }
 
 // Returns the 11-character video ID, or null if it's not a real YouTube video link
@@ -354,18 +354,19 @@ export default function ContributePage() {
 
       if (!value) {
         nextErrors[key] = `${label} is required. Please enter it in English.`;
-      } else if (containsKhmer(value)) {
+      } else if (!containsEnglish(value) || /\p{Script=Khmer}/u.test(value)) {
         nextErrors[key] = `Please enter ${label.toLowerCase()} in English only.`;
       }
     });
 
-    // Khmer fields are optional, but must not contain English letters
+    // Both translations are required; Khmer may include Latin proper names.
     khmerFields.forEach(({ key, label }) => {
       const value = form[key].trim();
 
-      if (value && containsEnglish(value)) {
-        nextErrors[key] =
-          `សូមបញ្ចូល${label}ជាភាសាខ្មែរ។ Please use Khmer only.`;
+      if (!value) {
+        nextErrors[key] = `${label} is required. សូមបំពេញប្រអប់នេះជាភាសាខ្មែរ។`;
+      } else if (!containsKhmer(value)) {
+        nextErrors[key] = `សូមបញ្ចូល${label}ជាភាសាខ្មែរ។ Please enter Khmer text in this field.`;
       }
     });
 
@@ -577,6 +578,9 @@ export default function ContributePage() {
               <input
                 id="title_en"
                 name="title_en"
+                required
+                aria-invalid={Boolean(errors.title_en)}
+                aria-describedby={errors.title_en ? "title_en-error" : undefined}
                 type="text"
                 value={form.title_en}
                 onChange={(e) => updateField("title_en", e.target.value)}
@@ -590,17 +594,20 @@ export default function ContributePage() {
                 Maximum {MAX_TITLE_LENGTH.toLocaleString()} characters.
               </small>
               {errors.title_en && (
-                <div style={styles.error}>{errors.title_en}</div>
+                <div id="title_en-error" role="alert" style={styles.error}>{errors.title_en}</div>
               )}
             </div>
 
             <div style={styles.field}>
               <label htmlFor="title_kh" style={styles.label}>
-                ចំណងជើង (ខ្មែរ)
+                ចំណងជើង (ខ្មែរ) *
               </label>
               <input
                 id="title_kh"
                 name="title_kh"
+                required
+                aria-invalid={Boolean(errors.title_kh)}
+                aria-describedby={errors.title_kh ? "title_kh-error" : undefined}
                 type="text"
                 value={form.title_kh}
                 onChange={(e) => updateField("title_kh", e.target.value)}
@@ -611,7 +618,7 @@ export default function ContributePage() {
                 lang="km"
               />
               {errors.title_kh && (
-                <div style={styles.error}>{errors.title_kh}</div>
+                <div id="title_kh-error" role="alert" style={styles.error}>{errors.title_kh}</div>
               )}
             </div>
 
@@ -645,6 +652,9 @@ export default function ContributePage() {
               <textarea
                 id="description_en"
                 name="description_en"
+                required
+                aria-invalid={Boolean(errors.description_en)}
+                aria-describedby={errors.description_en ? "description_en-error" : undefined}
                 value={form.description_en}
                 onChange={(event) =>
                   updateField("description_en", event.target.value)
@@ -653,17 +663,20 @@ export default function ContributePage() {
                 disabled={submitting}
               />
               {errors.description_en && (
-                <div style={styles.error}>{errors.description_en}</div>
+                <div id="description_en-error" role="alert" style={styles.error}>{errors.description_en}</div>
               )}
             </div>
 
             <div style={styles.field}>
               <label htmlFor="description_kh" style={styles.label}>
-                រឿងរ៉ាវ / ការពិពណ៌នា (ខ្មែរ)
+                រឿងរ៉ាវ / ការពិពណ៌នា (ខ្មែរ) *
               </label>
               <textarea
                 id="description_kh"
                 name="description_kh"
+                required
+                aria-invalid={Boolean(errors.description_kh)}
+                aria-describedby={errors.description_kh ? "description_kh-error" : undefined}
                 value={form.description_kh}
                 onChange={(event) =>
                   updateField("description_kh", event.target.value)
@@ -672,7 +685,7 @@ export default function ContributePage() {
                 disabled={submitting}
               />
               {errors.description_kh && (
-                <div style={styles.error}>{errors.description_kh}</div>
+                <div id="description_kh-error" role="alert" style={styles.error}>{errors.description_kh}</div>
               )}
             </div>
 
@@ -685,6 +698,9 @@ export default function ContributePage() {
               <input
                 id="contributor_en"
                 name="contributor_en"
+                required
+                aria-invalid={Boolean(errors.contributor_en)}
+                aria-describedby={errors.contributor_en ? "contributor_en-error" : undefined}
                 type="text"
                 value={form.contributor_en}
                 onChange={(event) =>
@@ -694,17 +710,20 @@ export default function ContributePage() {
                 disabled={submitting}
               />
               {errors.contributor_en && (
-                <div style={styles.error}>{errors.contributor_en}</div>
+                <div id="contributor_en-error" role="alert" style={styles.error}>{errors.contributor_en}</div>
               )}
             </div>
 
             <div style={styles.field}>
               <label htmlFor="contributor_kh" style={styles.label}>
-                អ្នករួមចំណែក (ខ្មែរ)
+                អ្នករួមចំណែក (ខ្មែរ) *
               </label>
               <input
                 id="contributor_kh"
                 name="contributor_kh"
+                required
+                aria-invalid={Boolean(errors.contributor_kh)}
+                aria-describedby={errors.contributor_kh ? "contributor_kh-error" : undefined}
                 type="text"
                 value={form.contributor_kh}
                 onChange={(event) =>
@@ -714,7 +733,7 @@ export default function ContributePage() {
                 disabled={submitting}
               />
               {errors.contributor_kh && (
-                <div style={styles.error}>{errors.contributor_kh}</div>
+                <div id="contributor_kh-error" role="alert" style={styles.error}>{errors.contributor_kh}</div>
               )}
             </div>
 
@@ -727,6 +746,9 @@ export default function ContributePage() {
               <input
                 id="place_en"
                 name="place_en"
+                required
+                aria-invalid={Boolean(errors.place_en)}
+                aria-describedby={errors.place_en ? "place_en-error" : undefined}
                 type="text"
                 value={form.place_en}
                 onChange={(event) => updateField("place_en", event.target.value)}
@@ -734,17 +756,20 @@ export default function ContributePage() {
                 disabled={submitting}
               />
               {errors.place_en && (
-                <div style={styles.error}>{errors.place_en}</div>
+                <div id="place_en-error" role="alert" style={styles.error}>{errors.place_en}</div>
               )}
             </div>
 
             <div style={styles.field}>
               <label htmlFor="place_kh" style={styles.label}>
-                ទីកន្លែង (ខ្មែរ)
+                ទីកន្លែង (ខ្មែរ) *
               </label>
               <input
                 id="place_kh"
                 name="place_kh"
+                required
+                aria-invalid={Boolean(errors.place_kh)}
+                aria-describedby={errors.place_kh ? "place_kh-error" : undefined}
                 type="text"
                 value={form.place_kh}
                 onChange={(event) => updateField("place_kh", event.target.value)}
@@ -752,7 +777,7 @@ export default function ContributePage() {
                 disabled={submitting}
               />
               {errors.place_kh && (
-                <div style={styles.error}>{errors.place_kh}</div>
+                <div id="place_kh-error" role="alert" style={styles.error}>{errors.place_kh}</div>
               )}
             </div>
 
