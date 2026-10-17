@@ -278,7 +278,7 @@ export default function Home() {
       </div>
       <div className="archive-info-card" style={styles.card}>
         <p style={styles.cardLabel}>SOURCE</p>
-        <p style={styles.cardValue}>{collection.source}</p>
+        <p className="archive-source" style={styles.cardValue}>{collection.source}</p>
       </div>
 
       <h2 id="collection" className="archive-section-label" style={styles.sectionLabel}>THE COLLECTION</h2>
