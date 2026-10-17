@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import EntryOwnerActions from "../../../components/EntryOwnerActions.js";
+import { notFound, redirect } from "next/navigation";
 import { createClient } from "../../../lib/supabase/server.js";
-import { entrySlug, findEntryBySlug } from "../../../lib/entry-slugs.js";
+import { entryHref, findEntryBySlug, isEntryId } from "../../../lib/entry-slugs.js";
 
 function highlight(value, query) {
   if (!query) return value;
@@ -29,55 +30,69 @@ const styles = {
 };
 
 export default async function EntryDetailPage({ params, searchParams }) {
-  const { slug } = await params;
-  const query = (await searchParams)?.q || "";
-  const supabase = await createClient();
-  const { data, error } = await supabase
-    .from("entries")
-    .select("*")
-    .order("created_at", { ascending: true });
-  if (error) notFound();
+  const { slug, id } = await params;
+  const search = await searchParams;
+  const query = typeof search?.q === "string" ? search.q : "";
+  if (id && !isEntryId(id)) notFound();
 
-  const entries = (data || []).map((entry) => ({
-    ...entry,
-    slug: entrySlug({...entry, title: entry.title_en}),
-    title: entry.title_en,
-    titleEn: entry.title_en,
-    titleKh: entry.title_kh,
-    descriptionEn: entry.description_en,
-    descriptionKh: entry.description_kh,
-    contributorEn: entry.contributor_en,
-    contributorKh: entry.contributor_kh,
-    placeEn: entry.place_en,
-    placeKh: entry.place_kh,
-    youtubeUrl: entry.youtube_url,
-    youtubeId: entry.youtube_id,
-  }));
-  const entry = findEntryBySlug(entries, slug);
-  if (!entry) notFound();
+  const supabase = await createClient();
+  const request = supabase.from("entries").select("*");
+  const { data, error } = id
+    ? await request.eq("id", id).maybeSingle()
+    : await request.order("created_at", { ascending: true });
+  if (error) {
+    return (
+      <main className="entry-detail-page" style={styles.page}>
+        <Link href="/" style={styles.back}>← Back to Browse</Link>
+        <p role="alert" style={styles.text}>Unable to load this entry. Please try again later.</p>
+      </main>
+    );
+  }
+
+  const row = id ? data : findEntryBySlug(data || [], slug);
+  if (!row) notFound();
+  if (!id) {
+    redirect(`${entryHref(row)}${query ? `?q=${encodeURIComponent(query)}` : ""}`);
+  }
+
+  const entry = {
+    ...row,
+    titleEn: row.title_en,
+    titleKh: row.title_kh,
+    descriptionEn: row.description_en,
+    descriptionKh: row.description_kh,
+    contributorEn: row.contributor_en,
+    contributorKh: row.contributor_kh,
+    placeEn: row.place_en,
+    placeKh: row.place_kh,
+    youtubeUrl: row.youtube_url,
+    youtubeId: row.youtube_id,
+  };
+  const title = entry.titleEn || entry.titleKh;
 
   return (
     <main className="entry-detail-page" style={styles.page}>
       <Link href="/" style={styles.back}>← Back to Browse</Link>
       <article className="entry-detail-panel" style={styles.panel}>
+        <EntryOwnerActions key={row.id} id={row.id} owner={row.owner} title={title} href={`${entryHref(row)}/edit`} />
         <div style={styles.kicker}>{entry.type === "song" ? "SONG" : "INSTRUMENT"}</div>
-        <h1 style={styles.title}><span className="khmer-title">{highlight(entry.titleKh, query)}</span><br /><span className="english-text">{highlight(entry.titleEn, query)}</span></h1>
+        <h1 style={styles.title}><span className="khmer-title">{highlight(entry.titleKh, query)}</span>{entry.titleKh && entry.titleEn && <br />}<span className="english-text">{highlight(entry.titleEn, query)}</span></h1>
         {entry.image ? (
           <img
             src={entry.image}
-            alt={entry.titleEn}
+            alt={title}
             loading="eager"
             decoding="async"
             style={styles.image}
           />
         ) : (
-          <div className="entry-image-placeholder" role="img" aria-label={`${entry.titleEn} image update soon`}>
+          <div className="entry-image-placeholder" role="img" aria-label={`${title} image update soon`}>
             <span>Update soon</span>
           </div>
         )}
         {entry.youtubeId ? (
           <iframe
-            title={`${entry.titleEn} video`}
+            title={`${title} video`}
             src={`https://www.youtube.com/embed/${entry.youtubeId}`}
             style={styles.video}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -90,16 +105,20 @@ export default async function EntryDetailPage({ params, searchParams }) {
           {(entry.tags || []).map((tag) => <span key={tag} style={styles.tag}>#{highlight(tag, query)}</span>)}
         </div>
         <section>
-          <p style={styles.label}>Khmer description</p>
-          <p className="khmer-text" style={styles.language}>{highlight(entry.descriptionKh, query)}</p>
-          <p style={styles.label}>English description</p>
-          <p className="english-text" style={styles.text}>{highlight(entry.descriptionEn, query)}</p>
+          {entry.descriptionKh && <>
+            <p style={styles.label}>Khmer description</p>
+            <p className="khmer-text" style={styles.language}>{highlight(entry.descriptionKh, query)}</p>
+          </>}
+          {entry.descriptionEn && <>
+            <p style={styles.label}>English description</p>
+            <p className="english-text" style={styles.text}>{highlight(entry.descriptionEn, query)}</p>
+          </>}
         </section>
         <section>
           <p style={styles.label}>Contributor</p>
-          <p style={styles.meta}><span className="khmer-contributor">{entry.contributorKh}</span> / <span className="english-text">{entry.contributorEn}</span></p>
+          <p style={styles.meta}><span className="khmer-contributor">{entry.contributorKh}</span>{entry.contributorKh && entry.contributorEn && " / "}<span className="english-text">{entry.contributorEn}</span></p>
           <p style={styles.label}>Place</p>
-          <p style={styles.meta}><span className="khmer-place">{entry.placeKh}</span> / <span className="english-text">{entry.placeEn}</span></p>
+          <p style={styles.meta}><span className="khmer-place">{entry.placeKh}</span>{entry.placeKh && entry.placeEn && " / "}<span className="english-text">{entry.placeEn}</span></p>
         </section>
       </article>
     </main>

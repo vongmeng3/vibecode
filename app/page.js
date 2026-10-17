@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import collection from "../collection.config.js";
 import EntryCard from "../components/EntryCard.js";
 import ArchiveNav from "../components/ArchiveNav.js";
-import { entrySlug } from "../lib/entry-slugs.js";
+import { entryHref } from "../lib/entry-slugs.js";
 import { createClient } from "../lib/supabase/client.js";
 
 const styles = {
@@ -187,7 +187,6 @@ export default function Home() {
       } else {
         const mappedEntries = (data || []).map((entry) => ({
           ...entry,
-          slug: entrySlug({...entry, title: entry.title_en}),
           title: entry.title_en,
           titleEn: entry.title_en,
           titleKh: entry.title_kh,
@@ -304,7 +303,7 @@ export default function Home() {
             descriptionEn={entry.descriptionEn}
             descriptionKh={entry.descriptionKh}
             image={entry.image}
-            href={`/entries/${entrySlug(entry)}${debouncedQuery ? `?q=${encodeURIComponent(debouncedQuery)}` : ""}`}
+            href={`${entryHref(entry)}${debouncedQuery ? `?q=${encodeURIComponent(debouncedQuery)}` : ""}`}
             highlight={(value) => highlight(value, debouncedQuery)}
             tags={entry.tags}
             contributorEn={entry.contributorEn}
@@ -370,5 +369,4 @@ export default function Home() {
     </main>
   );
 }
-
 
