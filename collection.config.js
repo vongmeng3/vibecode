@@ -17,7 +17,7 @@ const collection = {
   curator: "Taing VongMeng",
 
   // Where does your knowledge come from? A person, a place, a community.
-  source: "I will be the source of this archive, as I will be curating it myself.",
+  source: "Professor Svay Sor (លោកសាស្ត្រាចារ្យ ស្វាយ សរ) of the Royal University of Fine Arts, Phnom Penh, who taught me about these songs and instruments.",
 
 };
 
