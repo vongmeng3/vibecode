@@ -133,7 +133,7 @@ test("upload failure or an empty image URL prevents updating the entry", async (
 test("shared validation keeps existing bilingual rules and rejects invalid replacement photos", async () => {
   const form = entryFormValues(entry);
   assert.deepEqual(validateEntry(form, null, entry.image), {});
-  assert.equal(validateEntry(form, null).photo, "Photo is required.");
+  assert.match(validateEntry(form, null).photo, /^Photo is required\./);
   for (const key of ["title", "description", "contributor", "place"]) {
     assert.ok(validateEntry({ ...form, [`${key}_en`]: " " }, null, entry.image)[`${key}_en`]);
     assert.ok(validateEntry({ ...form, [`${key}_kh`]: " " }, null, entry.image)[`${key}_kh`]);

@@ -95,7 +95,7 @@ export default function ContributePage() {
     if (!ALLOWED_TYPES.includes(file.type)) {
       setErrors((current) => ({
         ...current,
-        photo: "Please choose a JPG, PNG, or WebP image.",
+        photo: "Please choose a JPG, PNG, or WebP image. សូមជ្រើសរើសរូបភាព JPG, PNG ឬ WebP។",
       }));
       return;
     }
@@ -103,7 +103,7 @@ export default function ContributePage() {
     if (file.size > MAX_FILE_SIZE) {
       setErrors((current) => ({
         ...current,
-        photo: "The image must be 5 MB or smaller.",
+        photo: "The image must be 5 MB or smaller. រូបភាពត្រូវមានទំហំមិនលើសពី 5 MB។",
       }));
     }
   }
