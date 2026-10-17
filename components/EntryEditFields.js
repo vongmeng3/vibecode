@@ -1,5 +1,5 @@
 import { styles } from "../lib/entry-form-styles.js";
-import { MAX_TITLE_LENGTH } from "../lib/entry-validation.js";
+import { MAX_TITLE_LENGTH, entryWarnings } from "../lib/entry-validation.js";
 
 const languagePairs = [
   { key: "title", en: "Title", kh: "ចំណងជើង" },
@@ -9,6 +9,7 @@ const languagePairs = [
 ];
 
 export default function EntryEditFields({ form, errors, onChange, disabled }) {
+  const warnings = entryWarnings(form);
   return (
     <>
       {languagePairs.map(({ key, en, kh }) => {
@@ -28,6 +29,7 @@ export default function EntryEditFields({ form, errors, onChange, disabled }) {
                     style={key === "description" ? styles.textarea : styles.input} disabled={disabled}
                     aria-invalid={Boolean(errors[field])} aria-describedby={errors[field] ? `${field}-error` : undefined} />
                   {errors[field] && <div id={`${field}-error`} role="alert" style={styles.error}>{errors[field]}</div>}
+                  {!errors[field] && warnings[field] && <div role="status" style={styles.warning}>{warnings[field]}</div>}
                 </div>
               );
             })}

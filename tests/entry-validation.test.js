@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { validateEntry } from "../lib/entry-validation.js";
+import { entryWarnings, validateEntry } from "../lib/entry-validation.js";
 
 const valid = {
   title_en: "Pin Peat", title_kh: "ពិណពាទ្យ",
@@ -34,4 +34,16 @@ test("a text file, an oversized photo and a missing photo are refused", () => {
   assert.ok(check({}, { type: "text/plain", size: 10 }).photo);
   assert.ok(check({}, { type: "image/png", size: 6 * 1024 * 1024 }).photo);
   assert.ok(check({}, null).photo);
+});
+
+test("Khmer in an English field gets a warning but is not blocked", () => {
+  const form = { ...valid, title_en: "ពិណពាទ្យ", place_en: "សៀមរាប" };
+  assert.deepEqual(validateEntry(form, photo), {});
+  assert.deepEqual(Object.keys(entryWarnings(form)).sort(), ["place_en", "title_en"]);
+  assert.match(entryWarnings(form).title_en, /\p{Script=Khmer}/u);
+});
+
+test("English, or English mixed with Khmer, gets no warning", () => {
+  assert.deepEqual(entryWarnings(valid), {});
+  assert.deepEqual(entryWarnings({ ...valid, title_en: "Pin Peat ពិណពាទ្យ" }), {});
 });

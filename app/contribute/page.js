@@ -7,7 +7,7 @@ import { createClient } from "../../lib/supabase/client.js";
 import { entryHref } from "../../lib/entry-slugs.js";
 
 import { styles } from "../../lib/entry-form-styles.js";
-import { ALLOWED_TYPES, MAX_FILE_SIZE, MAX_TITLE_LENGTH, getYouTubeId, validateEntry } from "../../lib/entry-validation.js";
+import { ALLOWED_TYPES, MAX_FILE_SIZE, MAX_TITLE_LENGTH, getYouTubeId, validateEntry, entryWarnings } from "../../lib/entry-validation.js";
 
 export default function ContributePage() {
   const router = useRouter();
@@ -113,6 +113,8 @@ export default function ContributePage() {
     setErrors(nextErrors);
     return Object.keys(nextErrors).length === 0;
   }
+
+  const warnings = entryWarnings(form);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -299,6 +301,9 @@ export default function ContributePage() {
               {errors.title_en && (
                 <div id="title_en-error" role="alert" style={styles.error}>{errors.title_en}</div>
               )}
+              {!errors.title_en && warnings.title_en && (
+                <div role="status" style={styles.warning}>{warnings.title_en}</div>
+              )}
             </div>
 
             <div style={styles.field}>
@@ -368,6 +373,9 @@ export default function ContributePage() {
               {errors.description_en && (
                 <div id="description_en-error" role="alert" style={styles.error}>{errors.description_en}</div>
               )}
+              {!errors.description_en && warnings.description_en && (
+                <div role="status" style={styles.warning}>{warnings.description_en}</div>
+              )}
             </div>
 
             <div style={styles.field}>
@@ -415,6 +423,9 @@ export default function ContributePage() {
               {errors.contributor_en && (
                 <div id="contributor_en-error" role="alert" style={styles.error}>{errors.contributor_en}</div>
               )}
+              {!errors.contributor_en && warnings.contributor_en && (
+                <div role="status" style={styles.warning}>{warnings.contributor_en}</div>
+              )}
             </div>
 
             <div style={styles.field}>
@@ -460,6 +471,9 @@ export default function ContributePage() {
               />
               {errors.place_en && (
                 <div id="place_en-error" role="alert" style={styles.error}>{errors.place_en}</div>
+              )}
+              {!errors.place_en && warnings.place_en && (
+                <div role="status" style={styles.warning}>{warnings.place_en}</div>
               )}
             </div>
 
