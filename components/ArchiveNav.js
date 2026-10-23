@@ -57,7 +57,6 @@ export default function ArchiveNav({ current = "archive" }) {
         <Link className="archive-nav-link" href="/#collection">Collection</Link>
         <Link className="archive-nav-link" href="/#about">About</Link>
         <Link className={`archive-nav-link ${current === "contribute" ? "is-active" : ""}`} href="/contribute" aria-current={current === "contribute" ? "page" : undefined}>Contribute</Link>
-        {user && <Link className="archive-nav-link" href="/my-entries">My entries / ការចូលរួមរបស់ខ្ញុំ</Link>}
         <div style={accountStyles.wrap}>
           <button
             type="button"

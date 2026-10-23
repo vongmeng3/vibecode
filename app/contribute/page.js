@@ -1,13 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { createClient } from "../../lib/supabase/client.js";
+import { entryHref } from "../../lib/entry-slugs.js";
 
 import { styles } from "../../lib/entry-form-styles.js";
 import { ALLOWED_TYPES, MAX_FILE_SIZE, MAX_TITLE_LENGTH, getYouTubeId, validateEntry, entryWarnings } from "../../lib/entry-validation.js";
 
 export default function ContributePage() {
+  const router = useRouter();
   const [supabase] = useState(() => createClient());
 
   const [user, setUser] = useState(null);
@@ -30,7 +33,6 @@ export default function ContributePage() {
   const [errors, setErrors] = useState({});
   const [submitError, setSubmitError] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     let mounted = true;
@@ -204,8 +206,7 @@ export default function ContributePage() {
         throw new Error("ENTRY_ID_MISSING");
       }
 
-      // New entries start as pending (database default), so stay here and explain that.
-      setSubmitted(true);
+      router.push(entryHref({ ...form, id: insertedEntry.id }));
     } catch (error) {
       console.error("Contribution failed:", error);
 
@@ -247,26 +248,6 @@ export default function ContributePage() {
                 Log in
               </a>
             </div>
-          </div>
-        </div>
-      </main>
-    );
-  }
-
-  if (submitted) {
-    return (
-      <main style={styles.page}>
-        <div style={styles.container}>
-          <div style={styles.kicker}>CONTRIBUTE / ចូលរួមចំណែក</div>
-          <h1 style={styles.title}>Add to the archive</h1>
-
-          <div role="status" style={styles.card}>
-            <p className="english-text" style={styles.loginMessage}>
-              Thank you. Your entry is waiting for review. You can see it under My entries, and it will appear in the archive once it&apos;s published.
-            </p>
-            <p className="khmer-text" style={styles.loginMessage}>
-              សូមអរគុណ។ ការចូលរួមរបស់អ្នកកំពុងរង់ចាំការពិនិត្យ។ អ្នកអាចមើលវានៅក្នុង «ការចូលរួមរបស់ខ្ញុំ» ហើយវានឹងបង្ហាញក្នុងបណ្ណសារ នៅពេលដែលវាត្រូវបានផ្សព្វផ្សាយ។
-            </p>
           </div>
         </div>
       </main>

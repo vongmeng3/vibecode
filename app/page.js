@@ -178,7 +178,6 @@ export default function Home() {
       const { data, error } = await supabase
         .from("entries")
         .select("*")
-        .eq("status", "published")
         .order("created_at", { ascending: true });
 
       if (!isActive) return;
