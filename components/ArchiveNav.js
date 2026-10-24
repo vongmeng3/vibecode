@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createClient } from "../lib/supabase/client.js";
+import ReviewerNavLink from "./ReviewerNavLink.js";
 
 const accountStyles = {
   wrap: { position: "relative" },
@@ -57,6 +58,8 @@ export default function ArchiveNav({ current = "archive" }) {
         <Link className="archive-nav-link" href="/#collection">Collection</Link>
         <Link className="archive-nav-link" href="/#about">About</Link>
         <Link className={`archive-nav-link ${current === "contribute" ? "is-active" : ""}`} href="/contribute" aria-current={current === "contribute" ? "page" : undefined}>Contribute</Link>
+        {user && <Link className="archive-nav-link" href="/my-entries">My entries / ការចូលរួមរបស់ខ្ញុំ</Link>}
+        {user && <ReviewerNavLink userId={user.id} />}
         <div style={accountStyles.wrap}>
           <button
             type="button"
