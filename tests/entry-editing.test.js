@@ -17,8 +17,13 @@ const entry = {
 const photo = { type: "image/png", size: 1024 };
 
 function mockClient(options = {}) {
-  const calls = { updates: [], filters: [], uploads: [], removals: [], auth: 0 };
+  const calls = { updates: [], filters: [], uploads: [], removals: [], auth: 0, rpc: [] };
   const client = {
+    // Defaults to an ordinary owner (not a reviewer), like most real edits.
+    async rpc(name) {
+      calls.rpc.push(name);
+      return { data: options.rpcError ? null : options.isReviewer ?? false, error: options.rpcError ?? null };
+    },
     auth: { async getUser() {
       calls.auth++;
       if (options.authThrows) throw new Error("PRIVATE AUTH ERROR");
@@ -58,11 +63,39 @@ test("save filters by UUID and owner, ignores protected fields, and keeps the cu
   assert.equal(result.error, undefined);
   assert.equal(calls.auth, 1);
   assert.deepEqual(calls.filters, [["id", ID], ["owner", OWNER]]);
-  for (const column of ["owner", "id", "status", "image"]) assert.equal(Object.hasOwn(calls.updates[0], column), false);
+  for (const column of ["owner", "id", "image"]) assert.equal(Object.hasOwn(calls.updates[0], column), false);
+  assert.equal(calls.updates[0].status, "pending");
   assert.equal(calls.updates[0].title_en, entry.title_en);
   assert.equal(result.entry.owner, OWNER);
   assert.equal(result.entry.image, entry.image);
   assert.equal(calls.uploads.length, 0);
+});
+
+test("a reviewer's edit sends no status, even if the form carries one", async () => {
+  const { client, calls } = mockClient({ isReviewer: true });
+  const form = { ...entryFormValues(entry), status: "returned" };
+  const result = await saveEntryEdit(client, entry, form, null);
+  assert.ok(result.entry);
+  assert.deepEqual(calls.rpc, ["is_reviewer"]);
+  assert.equal(Object.hasOwn(calls.updates[0], "status"), false);
+});
+
+test("a non-reviewer's edit goes back to pending, including when is_reviewer fails or is not exactly true", async () => {
+  for (const options of [{ isReviewer: false }, { isReviewer: null }, { isReviewer: "true" }, { rpcError: { message: "PRIVATE RPC ERROR" } }]) {
+    const { client, calls } = mockClient(options);
+    const result = await saveEntryEdit(client, entry, entryFormValues(entry), null);
+    assert.ok(result.entry);
+    assert.deepEqual(calls.rpc, ["is_reviewer"]);
+    assert.equal(calls.updates[0].status, "pending");
+  }
+});
+
+test("a non-reviewer's edit still fails when no row comes back", async () => {
+  const { client, calls } = mockClient({ zeroRows: true });
+  const result = await saveEntryEdit(client, entry, entryFormValues(entry), null);
+  assert.equal(calls.updates[0].status, "pending");
+  assert.equal(result.entry, undefined);
+  assert.match(result.error, /^Your changes were not saved\./);
 });
 
 test("duplicate titles update separate UUIDs", async () => {
